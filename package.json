@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vyachowski/frontend-trivia-webapp.git"
+    "url": "git+https://github.com/Vyachowski/trivia-webapp.git"
   },
   "keywords": ["js", "react", "express"],
   "author": "Slava Haikin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vyachowski/frontend-trivia-webapp/issues"
+    "url": "https://github.com/Vyachowski/trivia-webapp/issues"
   },
-  "homepage": "https://github.com/Vyachowski/frontend-trivia-webapp#readme"
+  "homepage": "https://github.com/Vyachowski/trivia-webapp#readme"
 }

@@ -1,0 +1,21 @@
+{
+  "name": "server-trivia-webapp",
+  "version": "0.0.1",
+  "description": "A frontend JS web app – trivia game",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vyachowski/trivia-webapp.git/server"
+  },
+  "keywords": ["js", "express"],
+  "author": "Slava Haikin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vyachowski/trivia-webapp/server/issues"
+  },
+  "homepage": "https://github.com/Vyachowski/trivia-webapp/server#readme"
+}
