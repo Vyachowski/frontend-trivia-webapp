@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A fullstack JS web app – trivia game",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,11 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/Vyachowski/frontend-trivia-webapp.git"
   },
-  "keywords": [
-    "js",
-    "react",
-    "express"
-  ],
+  "keywords": ["js", "react", "express"],
   "author": "Slava Haikin",
   "license": "ISC",
   "bugs": {
