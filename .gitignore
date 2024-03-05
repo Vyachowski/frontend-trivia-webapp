@@ -69,6 +69,7 @@ drf_example
 /coverage
 
 # production
+.old_markup
 /build
 /app/build
 
