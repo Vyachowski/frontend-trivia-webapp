@@ -11,7 +11,11 @@
     "eject": "react-scripts eject"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -22,7 +26,10 @@
     "type": "git",
     "url": "git+https://github.com/Vyachowski/trivia-webapp.git/app"
   },
-  "keywords": ["js", "react"],
+  "keywords": [
+    "js",
+    "react"
+  ],
   "author": "Slava Haikin",
   "license": "ISC",
   "bugs": {
@@ -36,6 +43,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
