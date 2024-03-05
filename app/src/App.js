@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider as RollbarProvider, ErrorBoundary } from '@rollbar/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PageNotFound from './Pages/PageNotFound';
+import MainPage from './Pages/MainPage';
+
+const rollbarConfig = {
+  accessToken: 'a00fea07b869482b8ac0f66dac81ab98',
+  environment: 'testenv',
+};
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
-  </div>
+  <RollbarProvider config={rollbarConfig}>
+    <ErrorBoundary>
+      {/* <Provider store={store}> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+      {/* </Provider> */}
+    </ErrorBoundary>
+  </RollbarProvider>
 );
 
 export default App;
