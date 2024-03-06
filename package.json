@@ -11,9 +11,6 @@
     "pre-commit": "cd app && npx lint-staged",
     "preserveUnused": true
   },
-  "lint-staged": {
-    "*.js": "eslint --fix"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vyachowski/trivia-webapp.git"
