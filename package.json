@@ -8,11 +8,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
+    "pre-commit": "cd app && npx lint-staged",
     "preserveUnused": true
   },
   "lint-staged": {
-    "*.js": "cd app && make lint"
+    "*.js": "eslint"
   },
   "repository": {
     "type": "git",
