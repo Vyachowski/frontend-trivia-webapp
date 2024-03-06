@@ -8,7 +8,6 @@ const GamePage = () => (
   <Container>
     <Header />
     <p className="separator" />
-    <div />
     <GameBoard>
       <GamePanel />
       <QuestionPanel />
