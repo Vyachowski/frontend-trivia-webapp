@@ -10,6 +10,7 @@ const Separator = styled.div`
   border: 2px solid #3A404E;
   border-radius: 1px;
   `;
+
 const GamePage = () => (
   <Container>
     <Header />
