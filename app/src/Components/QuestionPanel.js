@@ -1,8 +1,5 @@
-const QuestionPanel = () => {
-  const text = 'text';
-  return (
-    <div>{text}</div>
-  );
-};
+const QuestionPanel = () => (
+  <div>1</div>
+);
 
 export default QuestionPanel;
