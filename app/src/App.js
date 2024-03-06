@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PageNotFound from './Pages/PageNotFound';
-import MainPage from './Pages/MainPage';
+import GamePage from './Pages/GamePage';
 
 const App = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<MainPage />} />
+      <Route path="/" element={<GamePage />} />
       <Route path="/*" element={<PageNotFound />} />
     </Routes>
   </BrowserRouter>
