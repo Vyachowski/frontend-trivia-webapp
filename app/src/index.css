@@ -28,9 +28,3 @@ code {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-.separator {
-    height: 0;
-    border: 2px solid #3A404E;
-    border-radius: 1px;
-}

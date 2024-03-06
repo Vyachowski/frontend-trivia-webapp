@@ -1,7 +1,13 @@
+import styled from 'styled-components';
+
+const Main = styled.main`
+  padding-block: 42px;
+`;
+
 const GameBoard = ({ children }) => (
-  <main>
+  <Main>
     {children}
-  </main>
+  </Main>
 );
 
 export default GameBoard;
