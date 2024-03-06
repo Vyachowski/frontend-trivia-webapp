@@ -7,7 +7,8 @@ import QuestionPanel from '../Components/QuestionPanel';
 const GamePage = () => (
   <Container>
     <Header />
-    <p className='separator' />
+    <p className="separator" />
+    <div />
     <GameBoard>
       <GamePanel />
       <QuestionPanel />
