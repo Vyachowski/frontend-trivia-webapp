@@ -31,7 +31,7 @@ const ProgressBar = () => {
     { step: 4, name: '3 000', status: 'pending' },
     { step: 3, name: '2 000', status: 'pending' },
     { step: 2, name: '1 000', status: 'pending' },
-    { step: 1, name: '500', status: 'active' }
+    { step: 1, name: '500', status: 'active' } // status: finished
   ];
 
   return (
