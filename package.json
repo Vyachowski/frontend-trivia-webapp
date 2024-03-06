@@ -12,7 +12,7 @@
     "preserveUnused": true
   },
   "lint-staged": {
-    "*.js": "eslint"
+    "*.js": "eslint --fix"
   },
   "repository": {
     "type": "git",
