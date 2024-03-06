@@ -12,7 +12,7 @@
     "preserveUnused": true
   },
   "lint-staged": {
-    "*.js": "cd app && make eslint"
+    "*.js": "cd app && make lint"
   },
   "repository": {
     "type": "git",
