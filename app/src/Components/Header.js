@@ -4,7 +4,7 @@ const HeaderWrapper = styled.header`
     display: flex;
     flew-wrap: wrap;
     justify-content: space-between;
-    align-content: start;
+    align-items: start;
     min-height: 50px;
   `;
 

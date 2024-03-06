@@ -1,9 +1,7 @@
-import Container from './Container';
-
 const GameBoard = ({ children }) => (
-  <Container>
+  <main>
     {children}
-  </Container>
+  </main>
 );
 
 export default GameBoard;
