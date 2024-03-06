@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/Vyachowski/trivia-webapp#readme",
   "devDependencies": {
-    "lint-staged": "^15.2.2",
     "simple-git-hooks": "^2.10.0"
   }
 }

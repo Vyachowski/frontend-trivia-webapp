@@ -9,19 +9,23 @@ const HeaderWrapper = styled.header`
   `;
 
 const SoundButton = styled.button`
-    display: flex;
-    flew-wrap: wrap;
-    justify-content: center;
-    align-content: start;
+    height: 100%;
     background-color: transparent;
     border: none;
     fill: #b2bacd;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
   `;
 
 const Menu = styled.ul`
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 0;
     margin: 0;
     list-style-type: none;
   `;
@@ -33,6 +37,11 @@ const MenuLink = styled.a`
     color: inherit;
     text-transform: uppercase;
     text-decoration: none;
+    transition: opacity 0.5s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
   `;
 
 const Header = () => (
