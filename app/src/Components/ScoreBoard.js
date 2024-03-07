@@ -35,6 +35,11 @@ const ScoreBoardItem = styled.li`
   padding: 11px 20px;
   cursor: pointer;
   transition-duration: 0.3s;
+
+  &:hover {
+    color: rgb(52, 105, 195);
+    background-color: rgb(44, 52, 71);
+  }
   `;
 
 const UserPic = styled.img`

@@ -1,13 +1,16 @@
 body {
-  margin: 0;
-  padding-block: 50px;
+margin: 0;
+font-family: 'Roboto', sans-serif;
+font-weight: 400;
+font-size: 16px;
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #B2BACD;
-  background-color: #1E2633;
+color: #b2bacd;
+background-color: #1e2633;
+max-width: 1440px;
 }
 
 code {
