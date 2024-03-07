@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.header`
-    display: flex;
-    flew-wrap: wrap;
-    justify-content: space-between;
-    align-items: start;
-    min-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 1080px;
+  margin: 0 auto;
   `;
 
 const SoundButton = styled.button`
@@ -22,38 +24,55 @@ const SoundButton = styled.button`
   `;
 
 const Menu = styled.ul`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
   `;
 
-const MenuLink = styled.a`
-    display: block;
-    font-size: 20px;
-    font-weight: 600;
-    color: inherit;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: opacity 0.5s ease;
+const MenuItem = styled.li`
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
 
-    &:hover {
-      opacity: 0.6;
-    }
+  &:first-child * {
+    padding-left: 0;
+  }
+
+  &:last-child * {
+    padding-right: 0;
+  }
+
+  & * {
+    padding-block: 30px;
+    padding-inline: 40px;
+  }
+
+  &:hover {
+    color: rgb(52, 105, 195);
+  }
+  `;
+const MenuLink = styled.a`
+  display: block;
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+  transition-duration: 0.5s;
   `;
 
 const Header = () => (
   <HeaderWrapper>
     <nav>
       <Menu>
-        <li>
+        <MenuItem>
           <MenuLink href="#about">About</MenuLink>
-        </li>
-        <li>
+        </MenuItem>
+        <MenuItem>
           <MenuLink href="#rules">Rules</MenuLink>
-        </li>
+        </MenuItem>
       </Menu>
     </nav>
     <SoundButton type="button">
