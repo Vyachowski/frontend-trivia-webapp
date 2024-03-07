@@ -63,7 +63,7 @@ const InfoBoard = () => (
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <img src="images/logo.svg" alt="Avatar" style={{ width: 300, height: 300 }} />
+            <img src="images/logo.svg" alt="Avatar" style={{ width: '300px', height: '300px' }} />
           </div>
           <div className="flip-card-back">
             <p className="flip-card-back-number">1:00</p>
