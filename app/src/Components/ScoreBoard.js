@@ -7,7 +7,8 @@ const ScoreBoardSection = styled.section`
   box-shadow: 0px 4px 4px 0px #00000040;
   `;
 
-const ScoreBoardHeader = styled.header`
+const ScoreBoardHeader = styled.h2`
+  margin: 0;
   padding: 22px 26px;
   font-size: 24px;
   border-bottom: 2px solid #2F394C;
