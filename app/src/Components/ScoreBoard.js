@@ -1,58 +1,66 @@
 import styled from 'styled-components';
 
-const ScoreBoardSection = styled.section`
+const ScoreBoardWrapper = styled.aside`
+  min-width: 252px;
+  box-shadow: 0px 4px 4px 0px #00000040;
   background-color: #232a3a80;
   border-radius: 10px;
   border: 2px solid #3A404E;
-  box-shadow: 0px 4px 4px 0px #00000040;
   `;
 
 const ScoreBoardHeader = styled.h2`
   margin: 0;
-  padding: 22px 26px;
-  font-size: 24px;
+  padding: 15px 26px;
   border-bottom: 2px solid #2F394C;
-  `;
-
-const ScoreBoardMain = styled.main`
-  padding-top: 22px;
+  font-weight: 400;
+  font-size: 24px;
   `;
 
 const ScoreBoardList = styled.ul`
-  magin: 0;
-  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-height: 450px;
+  margin: 0;
+  padding: 18px 0 0;
+  overflow-y: scroll;
   list-style-type: none;
   `;
 
 const ScoreBoardItem = styled.li`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 20px;
   align-items: center;
-  min-height: 38px;
   padding: 11px 20px;
-  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  `;
+
+const UserPic = styled.img`
+  display: block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   `;
 
 const ScoreBoard = () => {
   const players = [{ nickname: 'Kurwa', id: 1 }, { nickname: 'Bobr', id: 2 }];
 
   return (
-    <ScoreBoardSection>
+    <ScoreBoardWrapper>
       <ScoreBoardHeader>
         Scoreboard
       </ScoreBoardHeader>
-      <ScoreBoardMain>
-        <ScoreBoardList>
-          {players.map(({ nickname, id }) => (
-            <ScoreBoardItem key={id}>
-              <span>0</span>
-              <span>{nickname}</span>
-            </ScoreBoardItem>
-          ))}
-        </ScoreBoardList>
-      </ScoreBoardMain>
-    </ScoreBoardSection>
+      <ScoreBoardList>
+        {players.map(({ nickname, id }) => (
+          <ScoreBoardItem key={id}>
+            <UserPic />
+            <span>{nickname}</span>
+          </ScoreBoardItem>
+        ))}
+      </ScoreBoardList>
+    </ScoreBoardWrapper>
   );
 };
 
