@@ -24,70 +24,70 @@ const ProgressStepNumber = styled.span`
   color: #3a404e;
   `;
 
-const ProgressStepSum = styled.span`
+const ProgressStepPoints = styled.span`
   color: #e4903f;
   `;
 
 const ProgressBar = () => {
   const progress = [
     {
-      step: 15, name: 'Your first offer', status: 'pending', isBurnable: true
+      step: 15, points: 'Your first offer', status: 'pending', isBurnable: true
     },
     {
-      step: 14, name: '1 500 000', status: 'pending', isBurnable: true
+      step: 14, points: '1 500 000', status: 'pending', isBurnable: true
     },
     {
-      step: 13, name: '800 000', status: 'pending', isBurnable: true
+      step: 13, points: '800 000', status: 'pending', isBurnable: true
     },
     {
-      step: 12, name: '400 000', status: 'pending', isBurnable: true
+      step: 12, points: '400 000', status: 'pending', isBurnable: true
     },
     {
-      step: 11, name: '200 000', status: 'pending', isBurnable: true
+      step: 11, points: '200 000', status: 'pending', isBurnable: true
     },
     {
-      step: 10, name: 'Junior Dev', status: 'pending', isBurnable: false
+      step: 10, points: 'Junior Dev', status: 'pending', isBurnable: false
     },
     {
-      step: 9, name: '50 000', status: 'pending', isBurnable: true
+      step: 9, points: '50 000', status: 'pending', isBurnable: true
     },
     {
-      step: 8, name: '25 000', status: 'pending', isBurnable: true
+      step: 8, points: '25 000', status: 'pending', isBurnable: true
     },
     {
-      step: 7, name: '15 000', status: 'pending', isBurnable: true
+      step: 7, points: '15 000', status: 'pending', isBurnable: true
     },
     {
-      step: 6, name: '10 000', status: 'pending', isBurnable: true
+      step: 6, points: '10 000', status: 'pending', isBurnable: true
     },
     {
-      step: 5, name: 'Web Dev', status: 'pending', isBurnable: false
+      step: 5, points: 'Web Dev', status: 'pending', isBurnable: false
     },
     {
-      step: 4, name: '3 000', status: 'pending', isBurnable: true
+      step: 4, points: '3 000', status: 'pending', isBurnable: true
     },
     {
-      step: 3, name: '2 000', status: 'pending', isBurnable: true
+      step: 3, points: '2 000', status: 'pending', isBurnable: true
     },
     {
-      step: 2, name: '1 000', status: 'pending', isBurnable: true
+      step: 2, points: '1 000', status: 'pending', isBurnable: true
     },
     {
-      step: 1, name: '500', status: 'active', isBurnable: false
+      step: 1, points: '500', status: 'active', isBurnable: false
     } // status: finished
   ];
 
   return (
     <ProgressBarWrapper>
       <ProgressList>
-        {progress.map(({ step, name, isBurnable }) => (
+        {progress.map(({ step, points, isBurnable }) => (
           <ProgressItem key={step}>
             <ProgressStepNumber>
               {step}
             </ProgressStepNumber>
-            <ProgressStepSum style={!isBurnable ? { color: '#ffffff' } : null}>
-              {name}
-            </ProgressStepSum>
+            <ProgressStepPoints style={!isBurnable ? { color: '#ffffff' } : null}>
+              {points}
+            </ProgressStepPoints>
           </ProgressItem>
         ))}
       </ProgressList>
