@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const QuestionPanelSection = styled.section`
   `;
 
-const Question = styled.div`
+const Question = styled.p`
   display: flex;
   align-items: center;
   min-height: 86px;
@@ -44,6 +44,8 @@ const AnswerButton = styled.button`
   color: inherit;
   cursor: pointer;
   background-repeat: no-repeat;
+  padding: 0 0 0 155px;
+  background-image: url('../assets/button_answer_basic.svg');
   `;
 
 const QuestionPanel = () => (
@@ -58,7 +60,11 @@ const QuestionPanel = () => (
         </AnswerButton>
       </Answer>
       <Answer key={2}>
-        <AnswerButton>
+        <AnswerButton style={{
+          padding: '0 0 0 65px',
+          backgroundImage: 'url(\'../assets/button_answer_basic_reversed.svg\')'
+        }}
+        >
           Example of answer
         </AnswerButton>
       </Answer>
@@ -68,7 +74,11 @@ const QuestionPanel = () => (
         </AnswerButton>
       </Answer>
       <Answer key={4}>
-        <AnswerButton>
+        <AnswerButton style={{
+          padding: '0 0 0 65px',
+          backgroundImage: 'url(\'../assets/button_answer_basic_reversed.svg\')'
+        }}
+        >
           Example of answer
         </AnswerButton>
       </Answer>
