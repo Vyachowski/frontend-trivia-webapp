@@ -10,19 +10,6 @@ const HeaderWrapper = styled.header`
   margin: 0 auto;
   `;
 
-const SoundButton = styled.button`
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  fill: #b2bacd;
-  transition: opacity 0.5s ease;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.6;
-  }
-`;
-
 const Menu = styled.ul`
   display: flex;
   flex-wrap: wrap;
@@ -55,6 +42,20 @@ const MenuItem = styled.li`
     color: rgb(52, 105, 195);
   }
   `;
+
+const SoundButton = styled.button`
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  fill: #b2bacd;
+  cursor: pointer;
+  transition: fill 0.5s ease;
+
+  &:hover {
+    fill: rgb(52, 105, 195);
+  }
+`;
+
 const MenuLink = styled.a`
   display: block;
   font: inherit;
