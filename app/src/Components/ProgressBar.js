@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
-const ProgressBarWrapper = styled.section`
+const ProgressBarWrapper = styled.aside`
   `;
 
 const ProgressList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  width: 252px;
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -11,16 +15,21 @@ const ProgressList = styled.ul`
 
 const ProgressItem = styled.li`
   display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  font-size: 24px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 216px;
+  height: 32px;
+  padding-left: 25px;
+  background-repeat: no-repeat;
   `;
 
 const ProgressStepNumber = styled.span`
-  min-width: 25px;
+  display: block;
+  width: 30px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 28px;
   color: #3a404e;
   `;
 
@@ -77,15 +86,32 @@ const ProgressBar = () => {
     } // status: finished
   ];
 
+  const getCustomStyles = (status, isBurnable) => {
+    const customStyles = {};
+    if (status === 'active') {
+      customStyles.color = '#1e2633';
+    } else if (!isBurnable) {
+      customStyles.color = '#ffffff';
+    }
+    return customStyles;
+  };
+
   return (
     <ProgressBarWrapper>
       <ProgressList>
-        {progress.map(({ step, points, isBurnable }) => (
-          <ProgressItem key={step}>
-            <ProgressStepNumber>
+        {progress.map(({
+          step, points, status, isBurnable
+        }) => (
+          <ProgressItem
+            key={step}
+            style={status === 'active' ? { backgroundImage: 'url(\'../assets/progress_mark.svg\')' } : null}
+          >
+            <ProgressStepNumber style={status === 'active' ? { color: '#ffffff' } : null}>
               {step}
             </ProgressStepNumber>
-            <ProgressStepPoints style={!isBurnable ? { color: '#ffffff' } : null}>
+            <ProgressStepPoints
+              style={getCustomStyles(status, isBurnable)}
+            >
               {points}
             </ProgressStepPoints>
           </ProgressItem>
