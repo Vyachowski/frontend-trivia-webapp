@@ -11,17 +11,17 @@ const HeaderWrapper = styled.header`
   `;
 
 const SoundButton = styled.button`
-    height: 100%;
-    background-color: transparent;
-    border: none;
-    fill: #b2bacd;
-    transition: opacity 0.5s ease;
-    cursor: pointer;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  fill: #b2bacd;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
 
-    &:hover {
-      opacity: 0.6;
-    }
-  `;
+  &:hover {
+    opacity: 0.6;
+  }
+`;
 
 const Menu = styled.ul`
   display: flex;
