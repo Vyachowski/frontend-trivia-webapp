@@ -44,8 +44,8 @@ const ScoreBoard = () => {
       </ScoreBoardHeader>
       <ScoreBoardMain>
         <ScoreBoardList>
-          {players.map(({ nickname, index }) => (
-            <ScoreBoardItem key={index}>
+          {players.map(({ nickname, id }) => (
+            <ScoreBoardItem key={id}>
               <span>0</span>
               <span>{nickname}</span>
             </ScoreBoardItem>
