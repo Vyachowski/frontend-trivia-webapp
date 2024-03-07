@@ -3,7 +3,7 @@ import ScoreBoard from './ScoreBoard';
 import InfoBoard from './InfoBoard';
 import ProgressBar from './ProgressBar';
 
-const PanelWrapper = styled.div`
+const GamePanelWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 55px;
@@ -13,11 +13,11 @@ const PanelWrapper = styled.div`
   `;
 
 const GamePanel = () => (
-  <PanelWrapper>
+  <GamePanelWrapper>
     <ScoreBoard />
     <InfoBoard />
     <ProgressBar />
-  </PanelWrapper>
+  </GamePanelWrapper>
 );
 
 export default GamePanel;

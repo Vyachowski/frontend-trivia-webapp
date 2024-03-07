@@ -3,73 +3,126 @@ import styled from 'styled-components';
 const BoardWrapper = styled.section`
   `;
 
-const HintList = styled.ul`
+const Hints = styled.ul`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 50px;
   margin: 0;
   padding: 0;
   list-style-type: none;
   `;
 
-const HintItem = styled.li`
+const Hint = styled.li`
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 0;
-  padding: 0;
-  width: 80px;
-  height: 44px;
-  flex-shrink: 0;
-  border: 2px solid #3A404E;
-  border-radius: 60px;
-  background-color: #2A3344;
-  `;
-const Timer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  margin-block: auto;
-  width: 288px;
-  height: 288px;
-  border: 6px solid #384358;
-  border-radius: 50%;
-  background-color: #232A3A;
+  width: 84px;
+  height: 48px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+  background-image: url('../assets/ellipse.svg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition-duration: 0.5s;
+
+  &:hover {
+    background-image: url('../assets/ellipse_active.svg');
+  }
   `;
 
-// const Time = styled.span`
-//   font-size: 72px;
-//   font-weight: 100;
-//   text-align: center;
-//   `;
+const Timer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  `;
+
+const TimerCard = styled.div`
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  border-radius: 50%;
+  filter: drop-shadow(0px 14px 34px #0D1A30);
+  `;
+
+const TimerInnerCard = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  `;
+
+const TimerCardFrontSide = styled.div`
+  background-color: transparent;
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  `;
+
+const TimerCardBackSide = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-windows-color);
+  color: white;
+  border-radius: 50%;
+  border: 6px solid #E4903F;
+  transform: rotateY(180deg);
+  fill: #232A3A;
+  stroke-width: 6px;
+  stroke: #384358;
+  `;
+const TimerCardNumber = styled.span`
+  color: #9DA6B7;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal;
+  `;
 
 const InfoBoard = () => (
   <BoardWrapper>
-    <HintList>
-      <HintItem>
+    <Hints>
+      <Hint>
         50:50
-      </HintItem>
-      <HintItem>
+      </Hint>
+      <Hint>
         1
-      </HintItem>
-      <HintItem>
+      </Hint>
+      <Hint>
         1
-      </HintItem>
-    </HintList>
+      </Hint>
+    </Hints>
     <Timer>
-      <div className="flip-card">
-        <div className="flip-card-inner">
-          <div className="flip-card-front">
-            <img src="images/logo.svg" alt="Avatar" style={{ width: '300px', height: '300px' }} />
-          </div>
-          <div className="flip-card-back">
-            <p className="flip-card-back-number">1:00</p>
-          </div>
-        </div>
-      </div>
+      <TimerCard>
+        <TimerInnerCard>
+          <TimerCardFrontSide>
+            <img src="assets/logo.svg" style={{ width: '300px', height: '300px' }} alt="Avatar" />
+          </TimerCardFrontSide>
+          <TimerCardBackSide>
+            <TimerCardNumber>
+              1:00
+            </TimerCardNumber>
+          </TimerCardBackSide>
+        </TimerInnerCard>
+      </TimerCard>
     </Timer>
   </BoardWrapper>
 );
