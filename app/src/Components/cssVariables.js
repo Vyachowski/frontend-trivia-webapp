@@ -1,5 +1,5 @@
 /* Container */
-const containerMaxWidth = '1074px;';
+const containerMaxWidth = '1074px';
 /* Main background colors */
 const mainBgColor = 'rgb(30, 38, 51)';
 const borderColor = 'rgb(58, 64, 78)';
