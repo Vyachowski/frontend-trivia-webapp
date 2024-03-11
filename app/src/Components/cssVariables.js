@@ -1,3 +1,5 @@
+/* Container */
+const containerMaxWidth = '1074px;';
 /* Main background colors */
 const mainBgColor = 'rgb(30, 38, 51)';
 const borderColor = 'rgb(58, 64, 78)';
@@ -16,6 +18,7 @@ const windowInnerBorder = `2px solid ${windowInnerBorderColor}`;
 const windowShadowSmall = '0px 4px 4px 0px #00000040';
 
 export {
+  containerMaxWidth,
   mainBgColor,
   borderColor,
   textColor,
