@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import ModalWindow from '../Components/ModalWindow';
+import LoginForm from '../Components/LoginForm';
 import Container from '../Components/Container';
 import Header from '../Components/Header';
 import GameBoard from '../Components/GameBoard';
@@ -13,17 +14,17 @@ const Separator = styled.div`
   `;
 
 const GamePage = () => (
-  <>
-    <Container>
-      <Header />
-      <Separator />
-      <GameBoard>
-        <GamePanel />
-        <QuestionPanel />
-      </GameBoard>
-    </Container>
-    <ModalWindow />
-  </>
+  <Container>
+    <Header />
+    <Separator />
+    <GameBoard>
+      <GamePanel />
+      <QuestionPanel />
+    </GameBoard>
+    <ModalWindow>
+      <LoginForm />
+    </ModalWindow>
+  </Container>
 );
 
 export default GamePage;

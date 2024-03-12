@@ -12,6 +12,10 @@ color: #b2bacd;
 background-color: #1e2633;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

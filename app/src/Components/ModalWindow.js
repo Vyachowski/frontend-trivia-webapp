@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ModalBackground = styled.div`
-  display: none;
+  // display: none;
   position: fixed;
   top: 0;
   bottom: 0;
