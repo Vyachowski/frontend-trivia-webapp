@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const ModalBackground = styled.div`
+  display: none;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -20,7 +21,8 @@ const ModalWrapper = styled.div`
   min-height: 40px;
   translate: -50% -50%;
   border-radius: 10px;
-  border: 2px solid #2F394C;
+  border: 2px solid #2f394c;
+  background-color: #1e2633;
   `;
 
 const ModalWindow = ({ children }) => (
