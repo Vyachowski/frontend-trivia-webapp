@@ -41,7 +41,7 @@ const FormButton = styled.button`
   `;
 
 const LoginForm = () => (
-  <form action="get">
+  <form action="/" method="POST">
     <FormHeader>Enter your name or nickname</FormHeader>
     <label htmlFor="nickname" className="visually-hidden">Your nickname:</label>
     <FormField type="text" id="nickname" value="" placeholder="My name or nickname" />
