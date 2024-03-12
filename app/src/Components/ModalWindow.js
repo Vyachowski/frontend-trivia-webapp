@@ -1,16 +1,34 @@
 import styled from 'styled-components';
 
-const ModalWrapper = styled.div`
-  max-width: 364px;
-  border-radius: 10px 10px 0 0;
-  border: 2px solid #2F394C;
-  background: linear-gradient(180deg, #2A303E -3.25%, #161D2E 104.57%);
-`;
+const ModalBackground = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #0e1521cc;
+  backdrop-filter: blur(10px);
+  `;
 
-const ModalWindow = () => (
-  <ModalWrapper>
-    1
-  </ModalWrapper>
+const ModalWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 364px;
+  min-height: 40px;
+  translate: -50% -50%;
+  border-radius: 10px;
+  border: 2px solid #2F394C;
+  `;
+
+const ModalWindow = ({ children }) => (
+  <ModalBackground>
+    <ModalWrapper>
+      { children }
+    </ModalWrapper>
+  </ModalBackground>
 );
 
 export default ModalWindow;
