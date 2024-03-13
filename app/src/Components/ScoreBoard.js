@@ -22,7 +22,6 @@ const ScoreBoardList = styled.ul`
   max-height: 450px;
   margin: 0;
   padding: 18px 0 0;
-  overflow-y: scroll;
   list-style-type: none;
   `;
 
