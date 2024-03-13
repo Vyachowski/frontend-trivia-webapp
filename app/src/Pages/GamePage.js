@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ModalWindow from '../Components/ModalWindow';
-import LoginForm from '../Components/LoginForm';
+import ModalManager from '../Components/ModalManager';
 import Container from '../Components/Container';
 import Header from '../Components/Header';
 import GameBoard from '../Components/GameBoard';
@@ -22,7 +22,7 @@ const GamePage = () => (
       <QuestionPanel />
     </GameBoard>
     <ModalWindow>
-      <LoginForm />
+      <ModalManager />
     </ModalWindow>
   </Container>
 );

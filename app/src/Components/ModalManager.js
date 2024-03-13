@@ -1,9 +1,11 @@
+import LoginForm from './LoginForm';
+
 const ModalManager = () => {
   const type = 'login';
 
   switch (type) {
     case 'login':
-      return 1;
+      return <LoginForm />;
     case 'aboutPage':
       return 2;
     case 'feedbackPage':
