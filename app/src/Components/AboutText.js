@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { borderColor } from './cssVariables';
+import { borderColor, mainWindowsColor } from './cssVariables';
+
+const Section = styled.section`
+  background-color: ${mainWindowsColor};
+  `;
 
 const Header = styled.h2`
   maring-bottom: 10px;
@@ -7,12 +11,12 @@ const Header = styled.h2`
   `;
 
 const AboutText = () => (
-  <section>
+  <Section>
     <Header>About header</Header>
     <p>
       Lorem ipsum
     </p>
-  </section>
+  </Section>
 );
 
 export default AboutText;
