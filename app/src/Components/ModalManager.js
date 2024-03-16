@@ -1,4 +1,5 @@
 import LoginForm from './LoginForm';
+import AboutText from './AboutText';
 
 const ModalManager = () => {
   const type = 'login';
@@ -7,7 +8,7 @@ const ModalManager = () => {
     case 'login':
       return <LoginForm />;
     case 'aboutPage':
-      return 2;
+      return <AboutText />;
     case 'feedbackPage':
       return 3;
     case 'winMessage':
@@ -15,7 +16,7 @@ const ModalManager = () => {
     case 'looseMessage':
       return 5;
     default:
-      return 'No such page';
+      return 'No such page, please try again';
   }
 };
 
