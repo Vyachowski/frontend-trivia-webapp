@@ -14,7 +14,9 @@ const AboutText = () => (
   <Section>
     <Header>About header</Header>
     <p>
-      Lorem ipsum
+      CodeCraft: Frontend Frenzy - Leaderboard Challenge
+
+      Compete for leaderboard glory in HTML, CSS, and JS. Climb ranks, prove skills, reach the top!
     </p>
   </Section>
 );
