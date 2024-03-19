@@ -16,7 +16,16 @@ const AboutText = () => (
     <p>
       CodeCraft: Frontend Frenzy - Leaderboard Challenge
 
-      Compete for leaderboard glory in HTML, CSS, and JS. Climb ranks, prove skills, reach the top!
+      Compete for leaderboard glory in HTML, CSS, and JS.
+      Climb ranks, prove skills, reach the top!
+
+      Immersive Interface
+
+      Experience the thrill of coding like never before with our immersive interface,
+      meticulously crafted with styled components. From the moment you enter the game,
+      you&apos;ll be captivated by the seamless navigation and engaging design that sets
+      the stage for your coding adventure.
+
     </p>
   </Section>
 );
