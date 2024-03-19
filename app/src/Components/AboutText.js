@@ -26,6 +26,14 @@ const AboutText = () => (
       you&apos;ll be captivated by the seamless navigation and engaging design that sets
       the stage for your coding adventure.
 
+      Progressive Challenge
+
+      Embark on your journey to frontend mastery as you navigate through
+      the progressive challenge bar. Each step represents a milestone in
+      your coding prowess, guiding you from the basics to advanced techniques.
+      With every correct answer, inch closer to the top of the leaderboard and
+      claim your place among the coding elite.
+
     </p>
   </Section>
 );
