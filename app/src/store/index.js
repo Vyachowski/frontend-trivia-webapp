@@ -8,5 +8,5 @@ export default configureStore({
     ui: uiReducer,
     app: appReducer,
     auth: authReducer,
-  }
+  },
 });
