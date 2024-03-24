@@ -17,7 +17,7 @@ const Separator = styled.div`
   `;
 
 const GamePage = () => (
-  !isMobile
+  isMobile
     ? <DeviceWarningMessage />
     : (
       <Container>

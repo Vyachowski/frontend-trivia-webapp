@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ModalWrapper from './ModalWrapper';
 
 const ModalBackground = styled.div`
-  display: none;
+  display: block;
   position: fixed;
   top: 0;
   bottom: 0;

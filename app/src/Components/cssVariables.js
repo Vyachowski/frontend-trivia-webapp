@@ -17,6 +17,23 @@ const windowInnerBorderColor = 'rgb(47, 57, 76)';
 const windowInnerBorder = `2px solid ${windowInnerBorderColor}`;
 const windowShadowSmall = '0px 4px 4px 0px #00000040';
 
+// Hex colors
+// const mainBgColor = '#1e2633';
+// const borderColor = '#3a404e';
+// /* Text colors */
+// const textColor = '#b2bacd';
+// const activeTextColor = '#3469c3';
+// const accentColor = '#e4903f';
+// /* Windows */
+// const mainWindowsColor = '#232a3a';
+// const windowActiveBackground = '#2c3447';
+// const windowBorderRadius = '10px';
+// const windowBorderColor = '#3a404e';
+// const windowBorder = `2px solid ${windowBorderColor}`;
+// const windowInnerBorderColor = '#2f394c';
+// const windowInnerBorder = `2px solid ${windowInnerBorderColor}`;
+// const windowShadowSmall = '0px 4px 4px 0px #00000040';
+
 export {
   containerMaxWidth,
   mainBgColor,
