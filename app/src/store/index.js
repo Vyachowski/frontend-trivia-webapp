@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './slices/authReducer';
-import appReducer from './slices/appReducer';
-import uiReducer from './slices/uiReducer';
+import authReducer from './slices/authSlice';
+import appReducer from './slices/appSlice';
+import uiReducer from './slices/uiSlice';
 
 export default configureStore({
   reducers: {
