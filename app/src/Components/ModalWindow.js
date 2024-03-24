@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ModalWrapper from './ModalWrapper';
 
 const ModalBackground = styled.div`
   display: none;
@@ -11,18 +12,6 @@ const ModalBackground = styled.div`
   height: 100%;
   background: #0e1521cc;
   backdrop-filter: blur(10px);
-  `;
-
-const ModalWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 364px;
-  min-height: 40px;
-  translate: -50% -50%;
-  border-radius: 10px;
-  border: 2px solid #2f394c;
-  background-color: #1e2633;
   `;
 
 const ModalWindow = ({ children }) => (
