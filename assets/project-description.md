@@ -17,3 +17,5 @@ But also appropriate:
 ```git
 git commit -am 'feat: add new modal window for leaderboard; feat: add button component; fix: add correct main layout for mobile devices; refactor: add typecript types'
 ```
+
+2) Just two branches for deploy and developing process (main and develop)
