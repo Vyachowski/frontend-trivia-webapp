@@ -1,4 +1,5 @@
 # Trivia game for a FrontEnd Developers
+
 [Badges]
 [Here will be a project image]
 
@@ -7,6 +8,7 @@
 [deployed version]
 
 ## Wanna have some fun and be the best?
+
 How can we find out who the most knowledgeable frontend developer is? Here’s a simple solution, inspired by the world-famous game "Who Wants to Be a Millionaire?"
 
 Go through 15 challenging questions and take all the spotlight!
