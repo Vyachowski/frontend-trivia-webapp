@@ -1,6 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+$main-font-color: #b2bacd;
+$main-background-color: #1e2633;
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,12 +16,10 @@
 }
 
 body {
-  color: #b2bacd;
-  background: #1e2633;
+  color: $main-font-color;
+  background: $main-background-color;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.text-balance {
+  text-wrap: balance;
 }

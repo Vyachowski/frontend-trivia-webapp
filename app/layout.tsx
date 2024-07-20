@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import './globals.css';
-import { FC, FunctionComponent } from 'react';
-import Image from 'next/image';
+import './globals.scss';
+import Link from 'next/link';
 
 // SECTION: INITIAL PART (400 – Regular, 500 – Semibold)
 const roboto = Roboto({ weight: ['400', '500'], subsets: ['latin'] });
@@ -30,6 +29,9 @@ export const COLORS = {
 };
 
 // SECTION: COMPONENTS
+const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return <div className={''}>{children}</div>;
+};
 const Text: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <p>{children}</p>;
 };
@@ -68,7 +70,7 @@ export default function RootLayout({
             <ul>
               {Object.entries(NAV_CONFIG).map(([key, value]) => (
                 <li key={key}>
-                  <a>{value.toUpperCase()}</a>
+                  <Link href={value}>{key.toUpperCase()}</Link>
                 </li>
               ))}
             </ul>
