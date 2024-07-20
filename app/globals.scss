@@ -1,24 +1,11 @@
-/* CONSTANTS */
-$accent-color: #e48800;
-$main-font-color: #b2bacd;
-$main-background-color: #1e2633;
-$secondary-background-color: #232a3a;
-$main-border-color: #3a404e;
-$secondaty-border-color: #384358;
-$main-scrollbar-color: #3b465c;
-$main-font-size: 16px;
-$large-font-size: 20px;
-$regular-font-weight: 400;
-$semibold-font-weight: 500;
-$heavy-background-shadow: 0 14px 34px 0 rgb(13 26 48 / 50%);
-$light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+@use 'variables.module.scss' as var;
 
 /* STYLES */
 body {
-  color: $main-font-color;
-  background: $main-background-color;
-  font-size: $main-font-size;
-  font-weight: $regular-font-weight;
+  color: var.$main-font-color;
+  background: var.$main-background-color;
+  font-size: var.$main-font-size;
+  font-weight: var.$regular-font-weight;
 }
 
 .text-balance {

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.scss';
 import styles from './styles.module.scss';
+import variables from './variables.module.scss';
 import Link from 'next/link';
 
 // SECTION: INITIAL PART (400 – Regular, 500 – Semibold)
@@ -24,10 +25,10 @@ const NAV_CONFIG = {
   feedback: FEDBACK_LINK,
 };
 
-export const COLORS = {
-  textMain: '#b2bacd',
-  backgroundMain: '#1e2633',
-};
+// export const COLORS = {
+//   textMain: '#b2bacd',
+//   backgroundMain: '#1e2633',
+// };
 
 // SECTION: COMPONENTS
 const Container: React.FC<{
@@ -52,7 +53,7 @@ const SpeakerIcon: React.FC<{ isSoundOff?: true }> = ({ isSoundOff }) => (
     width="25"
     height="20"
     viewBox="0 0 25 20"
-    fill={COLORS.textMain}
+    fill={variables.mainFontColor}
     style={isSoundOff && { opacity: '30%' }}
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -86,9 +87,10 @@ export default function RootLayout({
               ))}
             </ul>
           </nav>
-          <button type="button">
-            <SpeakerIcon isSoundOff />
-          </button>
+          <SpeakerIcon isSoundOff />
+          {/* <button type="button"> */}
+
+          {/* </button> */}
         </header>
         <main>{children}</main>
       </body>
