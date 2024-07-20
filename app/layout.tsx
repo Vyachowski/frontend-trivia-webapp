@@ -25,11 +25,6 @@ const NAV_CONFIG = {
   feedback: FEDBACK_LINK,
 };
 
-// export const COLORS = {
-//   textMain: '#b2bacd',
-//   backgroundMain: '#1e2633',
-// };
-
 // SECTION: COMPONENTS
 const Container: React.FC<{
   children: React.ReactNode;
@@ -87,10 +82,9 @@ export default function RootLayout({
               ))}
             </ul>
           </nav>
-          <SpeakerIcon isSoundOff />
-          {/* <button type="button"> */}
-
-          {/* </button> */}
+          <button type="button">
+            <SpeakerIcon isSoundOff />
+          </button>
         </header>
         <main>{children}</main>
       </body>
