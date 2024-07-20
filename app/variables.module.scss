@@ -1,0 +1,36 @@
+/* CONSTANTS */
+$accent-color: #e48800;
+
+$main-font-color: #b2bacd;
+
+$main-background-color: #1e2633;
+$secondary-background-color: #232a3a;
+
+$main-border-color: #3a404e;
+$secondary-border-color: #384358;
+
+$main-scrollbar-color: #3b465c;
+
+$main-font-size: 16px;
+$large-font-size: 20px;
+$regular-font-weight: 400;
+$semibold-font-weight: 500;
+
+$heavy-background-shadow: 0 14px 34px 0 rgb(13 26 48 / 50%);
+$light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+
+:export {
+  accentColor: $accent-color;
+  mainFontColor: $main-font-color;
+  mainBackgroundColor: $main-background-color;
+  secondaryFontColor: $secondary-background-color;
+  mainBorderColor: $main-border-color;
+  secondaryBorderColor: $secondary-border-color;
+  mainScrollbarColor: $main-scrollbar-color;
+  mainFontSize: $main-font-size;
+  largeFontSize: $large-font-size;
+  regularFontWeight: $regular-font-weight;
+  semiboldFontWeight: $semibold-font-weight;
+  heavyBackgroundShadow: $heavy-background-shadow;
+  lightBackgroundShadow: $light-background-shadow;
+}

@@ -14,14 +14,14 @@
   },
   "lint-staged": {
     "*.{css,scss}": [
-      "stylelint --fix",
+      "stylelint --fix --allow-empty-input",
       "prettier --write"
     ],
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "!(*.css|*.js|*.jsx|*.env*|*.svg|*.png|*.gitignore|*.avif)": [
+    "!(*.css|*.js|*.jsx|*.env*|*.svg|*.png|.gitignore|*.avif|.stylelintignore)": [
       "prettier --write"
     ]
   },
