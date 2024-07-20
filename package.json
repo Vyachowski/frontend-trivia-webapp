@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "prettify": "prettier --write app/"
+    "prettify": "prettier --write app/",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "lint-staged": {
     "*.{css,scss}": [
@@ -19,7 +21,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "!(*.css|*.js|*.jsx|*.env*)": [
+    "!(*.css|*.js|*.jsx|*.env*|*.svg|*.png|*.gitignore|*.avif)": [
       "prettier --write"
     ]
   },
@@ -33,6 +35,15 @@
     "sass": "^1.77.8"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.5",
+    "@storybook/addon-interactions": "^8.2.5",
+    "@storybook/addon-links": "^8.2.5",
+    "@storybook/addon-onboarding": "^8.2.5",
+    "@storybook/blocks": "^8.2.5",
+    "@storybook/nextjs": "^8.2.5",
+    "@storybook/react": "^8.2.5",
+    "@storybook/test": "^8.2.5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -41,8 +52,10 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-perfectionist": "^2.11.0",
     "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-storybook": "^0.8.0",
     "lint-staged": "^15.2.7",
     "simple-git-hooks": "^2.11.1",
+    "storybook": "^8.2.5",
     "stylelint": "^16.6.1",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
