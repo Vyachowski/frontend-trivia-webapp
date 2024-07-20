@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import './globals.scss';
+import styles from './styles.module.scss';
 import Link from 'next/link';
 
 // SECTION: INITIAL PART (400 – Regular, 500 – Semibold)
@@ -29,9 +30,19 @@ export const COLORS = {
 };
 
 // SECTION: COMPONENTS
-const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <div className={''}>{children}</div>;
+const Container: React.FC<{
+  children: React.ReactNode;
+  isNarrow?: boolean;
+}> = ({ children, isNarrow = false }) => {
+  return (
+    <div
+      className={isNarrow ? styles['container'] : styles['container-narrow']}
+    >
+      {children}
+    </div>
+  );
 };
+
 const Text: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return <p>{children}</p>;
 };
@@ -65,9 +76,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <header>
+        <header className={`${styles.container} ${styles.header}`}>
           <nav>
-            <ul>
+            <ul className={styles.list}>
               {Object.entries(NAV_CONFIG).map(([key, value]) => (
                 <li key={key}>
                   <Link href={value}>{key.toUpperCase()}</Link>
