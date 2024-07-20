@@ -19,7 +19,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "!(*.css|*.js|*.jsx)": [
+    "!(*.css|*.js|*.jsx|*.env*)": [
       "prettier --write"
     ]
   },
