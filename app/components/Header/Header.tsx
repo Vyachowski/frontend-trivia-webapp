@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from './Header.module.scss';
 import { SpeakerIcon } from './SpeakerIcon/SpeakerIcon';
-import { ABOUT_LINK, RULE_LINK, FEEDBACK_LINK } from '@/src/constants';
+import { ABOUT_LINK, RULE_LINK, FEEDBACK_LINK } from '@/app/constants';
 
 const NAV_CONFIG = {
   about: ABOUT_LINK,

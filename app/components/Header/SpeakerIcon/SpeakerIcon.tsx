@@ -1,4 +1,4 @@
-import variables from '../../../variables.module.scss';
+import variables from '@/app/variables.module.scss';
 
 export const SpeakerIcon: React.FC<{ isSoundOff?: true }> = ({
   isSoundOff,
