@@ -1,0 +1,24 @@
+@use 'src/variables.module.scss' as *;
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper {
+  @include horizontal-list;
+  @include container--narrow;
+
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu {
+  @include horizontal-list;
+
+  justify-content: space-between;
+  align-items: center;
+}

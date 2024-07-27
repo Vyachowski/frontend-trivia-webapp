@@ -1,11 +1,11 @@
-@use 'variables.module.scss' as var;
+@use 'src/variables.module.scss' as *;
 
 /* STYLES */
 body {
-  color: var.$main-font-color;
-  background: var.$main-background-color;
-  font-size: var.$main-font-size;
-  font-weight: var.$regular-font-weight;
+  color: $main-font-color;
+  background: $main-background-color;
+  font-size: $main-font-size;
+  font-weight: $regular-font-weight;
 }
 
 .text-balance {
