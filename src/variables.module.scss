@@ -53,3 +53,30 @@ $light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
 
   max-width: 1040px;
 }
+
+@mixin reset-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin reset-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
