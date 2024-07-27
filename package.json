@@ -21,7 +21,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "!(*.css|*.js|*.jsx|*.env*|*.svg|*.png|.gitignore|*.avif|.stylelintignore)": [
+    "!(*.css|*.js|*.jsx|*.env*|*.svg|*.png|.gitignore|*.avif|.stylelintignore|Makefile)": [
       "prettier --write"
     ]
   },
