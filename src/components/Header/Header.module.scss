@@ -38,15 +38,7 @@
   font-size: 20px;
   font-weight: 600;
 
-  &:hover {
-    opacity: 0.5;
-    transition: opacity 0.2s ease-in;
-  }
-
-  &:active {
-    opacity: 0.3;
-    transition: opacity 0.2s ease-in;
-  }
+  @include default-hover;
 }
 
 .settings-menu {
@@ -59,10 +51,12 @@
 
 .lang-switcher {
   @include reset-button;
+  @include default-hover;
 }
 
 .sound-toggle {
   @include reset-button;
+  @include default-hover;
 
   display: flex;
   justify-content: center;
