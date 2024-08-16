@@ -5,7 +5,10 @@ import './globals.scss';
 
 import { Header } from '@/app/components/Header/Header';
 
-const roboto = Roboto({ weight: ['400', '500'], subsets: ['latin'] });
+const roboto = Roboto({
+  weight: ['400', '500'],
+  subsets: ['latin', 'cyrillic'],
+});
 
 export const metadata: Metadata = {
   description:
