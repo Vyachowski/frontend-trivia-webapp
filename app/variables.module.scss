@@ -30,23 +30,7 @@ $light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
   }
 }
 
-/* stylelint-disable */
-:export {
-  accentColor: $accent-color;
-  mainFontColor: $main-font-color;
-  mainBackgroundColor: $main-background-color;
-  secondaryFontColor: $secondary-background-color;
-  mainBorderColor: $main-border-color;
-  secondaryBorderColor: $secondary-border-color;
-  mainScrollbarColor: $main-scrollbar-color;
-  mainFontSize: $main-font-size;
-  largeFontSize: $large-font-size;
-  regularFontWeight: $regular-font-weight;
-  semiboldFontWeight: $semibold-font-weight;
-  heavyBackgroundShadow: $heavy-background-shadow;
-  lightBackgroundShadow: $light-background-shadow;
-}
-
+/* MIXINS */
 @mixin reset-list {
   margin: 0;
   padding: 0;
@@ -65,7 +49,7 @@ $light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
   margin-inline: auto;
 }
 
-@mixin container--narrow {
+@mixin container-narrow {
   @include container;
 
   max-width: 1040px;
@@ -108,4 +92,21 @@ $light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
     opacity: 0.3;
     transition: opacity 0.2s ease-in;
   }
+}
+
+/* stylelint-disable */
+:export {
+  accentColor: $accent-color;
+  mainFontColor: $main-font-color;
+  mainBackgroundColor: $main-background-color;
+  secondaryFontColor: $secondary-background-color;
+  mainBorderColor: $main-border-color;
+  secondaryBorderColor: $secondary-border-color;
+  mainScrollbarColor: $main-scrollbar-color;
+  mainFontSize: $main-font-size;
+  largeFontSize: $large-font-size;
+  regularFontWeight: $regular-font-weight;
+  semiboldFontWeight: $semibold-font-weight;
+  heavyBackgroundShadow: $heavy-background-shadow;
+  lightBackgroundShadow: $light-background-shadow;
 }
