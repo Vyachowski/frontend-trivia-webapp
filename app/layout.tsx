@@ -4,6 +4,7 @@ import { Roboto } from 'next/font/google';
 import './globals.scss';
 
 import { Header } from '@/app/components/Header/Header';
+import { Modal } from '@/app/components/Modal/Modal';
 
 const roboto = Roboto({
   weight: ['400', '500'],
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <Header />
         <main>{children}</main>
+        <Modal isOpen={false} type="nameForm" />
       </body>
     </html>
   );

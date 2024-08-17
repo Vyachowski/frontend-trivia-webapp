@@ -26,6 +26,7 @@
     "pre-commit": "npx lint-staged"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
