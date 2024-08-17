@@ -5,11 +5,26 @@ $main-background-color: #1e2633;
 $secondary-background-color: #232a3a;
 $main-border-color: #3a404e;
 $secondary-border-color: #384358;
+$modal-border-color: #2f394c;
 $main-scrollbar-color: #3b465c;
 $main-font-size: 16px;
 $large-font-size: 20px;
 $heavy-background-shadow: 0 14px 34px 0 rgb(13 26 48 / 50%);
 $light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+$modal-header-gradient: linear-gradient(0deg, #2a303e 0%, #161d2e 100%);
+$modal-active-button-radial-gradient: radial-gradient(
+  circle,
+  #2a3344 0%,
+  #2e3e59 100%
+);
+
+/* LAYERS */
+$basic-layer: 1;
+$menu-layer: 10;
+$modal-layer: 20;
+
+/* RADIUS */
+$small-radius: 10px;
 
 /* MEDIA-QUERY */
 @mixin respond-to($device) {
