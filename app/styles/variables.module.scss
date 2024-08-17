@@ -92,18 +92,6 @@ $light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
   }
 }
 
-/* STYLES */
-body {
-  color: $main-font-color;
-  background: $main-background-color;
-  font-size: $main-font-size;
-  font-weight: $regular-font-weight;
-}
-
-.text-balance {
-  text-wrap: balance;
-}
-
 /* stylelint-disable */
 :export {
   accentColor: $accent-color;
@@ -115,8 +103,6 @@ body {
   mainScrollbarColor: $main-scrollbar-color;
   mainFontSize: $main-font-size;
   largeFontSize: $large-font-size;
-  regularFontWeight: $regular-font-weight;
-  semiboldFontWeight: $semibold-font-weight;
   heavyBackgroundShadow: $heavy-background-shadow;
   lightBackgroundShadow: $light-background-shadow;
 }
