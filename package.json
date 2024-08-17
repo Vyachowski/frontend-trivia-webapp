@@ -20,9 +20,6 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
-    ],
-    "!(*.css|*.js|*.jsx|*.env*|*.svg|*.png|.gitignore|*.avif|.stylelintignore|Makefile)": [
-      "prettier --write"
     ]
   },
   "simple-git-hooks": {

@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import styles from './Header.module.scss';
 import { SpeakerIcon } from './SpeakerIcon/SpeakerIcon';
+import { en } from '@/app/dictionaries';
 import { ABOUT_LINK, RULE_LINK, FEEDBACK_LINK } from '@/app/constants';
 
-const NAV_CONFIG = {
-  about: ABOUT_LINK,
-  rules: RULE_LINK,
-  feedback: FEEDBACK_LINK,
+const HEADER_NAV = {
+  [en.headerMenuItems.about]: ABOUT_LINK,
+  [en.headerMenuItems.rules]: RULE_LINK,
+  [en.headerMenuItems.feedback]: FEEDBACK_LINK,
 };
 
 export const Header = () => (
@@ -14,7 +15,7 @@ export const Header = () => (
     <div className={styles.wrapper}>
       <nav className={styles.nav}>
         <ul className={styles.menu}>
-          {Object.entries(NAV_CONFIG).map(([key, value]) => (
+          {Object.entries(HEADER_NAV).map(([key, value]) => (
             <li className={styles['menu-item']} key={key}>
               <Link className={styles['menu-link']} href={value}>
                 {key.toUpperCase()}

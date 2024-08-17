@@ -13,6 +13,23 @@ $semibold-font-weight: 500;
 $heavy-background-shadow: 0 14px 34px 0 rgb(13 26 48 / 50%);
 $light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
 
+/* MEDIA-QUERY */
+@mixin respond-to($device) {
+  @if $device == 'mobile' {
+    @media (width >= 375px) {
+      @content;
+    }
+  } @else if $device == 'tablet' {
+    @media (width >= 768px) {
+      @content;
+    }
+  } @else if $device == 'desktop' {
+    @media (width >= 1024px) {
+      @content;
+    }
+  }
+}
+
 /* stylelint-disable */
 :export {
   accentColor: $accent-color;

@@ -5,16 +5,24 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+
+  @include respond-to('mobile') {
+    padding-inline: 10px;
+  }
 }
 
 .wrapper {
   @include horizontal-list;
   @include container--narrow;
 
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   border-bottom: 4px solid $main-border-color;
+
+  @include respond-to('mobile') {
+    justify-content: space-between;
+  }
 }
 
 .menu {
@@ -25,20 +33,26 @@
 }
 
 .menu-item {
-  &:first-child > * {
-    padding-left: 0;
+  @include respond-to('mobile') {
+    &:first-child > * {
+      padding-left: 0;
+    }
   }
 }
 
 .menu-link {
   @include reset-link;
+  @include default-hover;
 
   padding-block: 30px;
-  padding-inline: 35px;
-  font-size: 20px;
+  padding-inline: 20px;
+  font-size: 1rem;
   font-weight: 600;
 
-  @include default-hover;
+  @include respond-to('tablet') {
+    padding-inline: 35px;
+    font-size: 1.2rem;
+  }
 }
 
 .settings-menu {
@@ -52,6 +66,8 @@
 .lang-switcher {
   @include reset-button;
   @include default-hover;
+
+  padding-block: 30px;
 }
 
 .sound-toggle {
@@ -61,4 +77,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-block: 30px;
 }
