@@ -1,10 +1,9 @@
 import styles from './styles/Page.module.scss';
 import classNames from 'classnames/bind';
-import { TestImage } from './assets';
+import { GoogleTipIcon, GptTipIcon, TestImage } from './assets';
 const cx = classNames.bind(styles);
 
 export default function Home() {
-  console.log(TestImage);
   return (
     <>
       <section className={cx('page-wrapper')}>
@@ -21,7 +20,7 @@ export default function Home() {
         </div>
         <div className={cx('game')}>
           <header className={cx('hints-wrapper')}>
-            <ul className={cx('hints')}>
+            <ul className={cx('hint-list')}>
               <li className={cx('hint')}>
                 <button
                   className={cx('hint-button')}
@@ -38,6 +37,7 @@ export default function Home() {
                   // onClick={() => console.log('Hint clicked!')}
                 >
                   <span className="visually-hidden">Chat it!</span>
+                  <GptTipIcon />
                 </button>
               </li>
               <li className={cx('hint')}>
@@ -46,6 +46,7 @@ export default function Home() {
                   type="button"
                   // onClick={() => console.log('Hint clicked!')}
                 >
+                  <GoogleTipIcon />
                   <span className="visually-hidden">Google it!</span>
                 </button>
               </li>

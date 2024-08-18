@@ -8,8 +8,13 @@
 
 .scoreboard {
   min-width: 252px;
+  min-height: 300px;
   border-radius: $small-radius;
   border: 2px solid $main-border-color;
+
+  @include respond-to('tablet') {
+    min-height: 543px;
+  }
 }
 
 .scoreboard-title {
@@ -20,9 +25,9 @@
 }
 
 .scoreboard-list {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+  @include reset-list;
+
+  overflow-y: scroll;
 }
 
 .scoreboard-item {
@@ -39,4 +44,24 @@
     width: 38px;
     aspect-ratio: 1 / 1;
   }
+}
+
+.hint-list {
+  @include reset-list;
+  @include horizontal-list;
+
+  gap: 24px;
+}
+
+.hint-button {
+  @include reset-button;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 44px;
+  border-radius: 80px / 44px;
+  border: 2px solid $main-border-color;
+  background-color: $card-background-color;
 }
