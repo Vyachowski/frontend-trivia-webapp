@@ -7,7 +7,7 @@ import { Header } from '@/app/components/Header/Header';
 import { Modal } from '@/app/components/Modal/Modal';
 
 const roboto = Roboto({
-  weight: ['400', '500'],
+  weight: ['100', '400', '500'],
   subsets: ['latin', 'cyrillic'],
 });
 

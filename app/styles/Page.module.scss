@@ -4,6 +4,7 @@
   @include container;
 
   display: flex;
+  justify-content: space-between;
 }
 
 .scoreboard {
@@ -64,4 +65,20 @@
   border-radius: 80px / 44px;
   border: 2px solid $main-border-color;
   background-color: $card-background-color;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 288px;
+  height: 288px;
+  border-radius: 50%;
+  border: 6px solid $secondary-border-color;
+}
+
+.time {
+  font-size: 4.2rem;
+  font-weight: 100;
+  color: $secondary-font-color;
 }

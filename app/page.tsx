@@ -19,7 +19,7 @@ export default function Home() {
           </ul>
         </div>
         <div className={cx('game')}>
-          <header className={cx('hints-wrapper')}>
+          <div className={cx('hints-wrapper')}>
             <ul className={cx('hint-list')}>
               <li className={cx('hint')}>
                 <button
@@ -51,7 +51,10 @@ export default function Home() {
                 </button>
               </li>
             </ul>
-          </header>
+          </div>
+          <div className={cx('timer')}>
+            <p className={cx('time')}>30</p>
+          </div>
         </div>
         <div className={cx('progress')}></div>
       </section>
