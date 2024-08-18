@@ -1,18 +1,20 @@
-import Image from 'next/image';
 import styles from './styles/Page.module.scss';
 import classNames from 'classnames/bind';
-
+import { TestImage } from './assets';
 const cx = classNames.bind(styles);
 
 export default function Home() {
+  console.log(TestImage);
   return (
     <>
       <section className={cx('page-wrapper')}>
         <div className={cx('scoreboard')}>
-          <h2 className={cx('scoreboard-title')}></h2>
+          <h2 className={cx('scoreboard-title')}>Scoreboard</h2>
           <ul className={cx('scoreboard-list')}>
-            <li className={cx('scoreboard')}>
-              <Image width={100} height={100} src="" alt="Test." />
+            <li className={cx('scoreboard-item')}>
+              <div className={cx('scoreboard-image')}>
+                <TestImage />
+              </div>
               <span>user 1</span>
             </li>
           </ul>

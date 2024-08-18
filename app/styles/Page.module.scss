@@ -1,5 +1,42 @@
 @use './variables.module.scss' as *;
 
 .page-wrapper {
+  @include container;
+
   display: flex;
+}
+
+.scoreboard {
+  min-width: 252px;
+  border-radius: $small-radius;
+  border: 2px solid $main-border-color;
+}
+
+.scoreboard-title {
+  margin: 0;
+  padding: 22px 26px;
+  border-bottom: 2px solid $main-border-color;
+  font-weight: normal;
+}
+
+.scoreboard-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.scoreboard-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+}
+
+.scoreboard-image {
+  overflow: hidden;
+
+  & > * {
+    width: 38px;
+    aspect-ratio: 1 / 1;
+  }
 }
