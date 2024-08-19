@@ -47,6 +47,14 @@
   }
 }
 
+.game {
+  min-height: 300px;
+
+  @include respond-to('tablet') {
+    min-height: 543px;
+  }
+}
+
 .hint-list {
   @include reset-list;
   @include horizontal-list;
