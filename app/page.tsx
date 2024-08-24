@@ -15,7 +15,7 @@ export default function Home() {
               <div className={cx('scoreboard-image')}>
                 <TestImage />
               </div>
-              <span>user 1</span>
+              <span>User 1</span>
             </li>
           </ul>
         </div>
