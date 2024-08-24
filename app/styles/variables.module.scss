@@ -62,10 +62,10 @@ $small-radius: 10px;
 @mixin container {
   max-width: 1080px;
   margin-inline: auto;
-  padding: 10px;
+  padding-inline: 10px;
 
   @include respond-to('tablet') {
-    padding: 20px;
+    padding-inline: 20px;
   }
 }
 

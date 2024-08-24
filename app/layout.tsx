@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={roboto.className}>
         <Header />
-        <main>{children}</main>
+        <main style={{ paddingTop: '42px' }}>{children}</main>
         <Modal isOpen={false} type="nameForm" />
       </body>
     </html>
