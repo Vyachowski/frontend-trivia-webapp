@@ -1,6 +1,7 @@
 import styles from './styles/Page.module.scss';
 import classNames from 'classnames/bind';
 import { GoogleTipIcon, GptTipIcon, TestImage } from './assets';
+import { HIGHLIGHTED_STEPS, PROGRESS_LADDER } from './constants';
 const cx = classNames.bind(styles);
 
 export default function Home() {
@@ -53,10 +54,33 @@ export default function Home() {
             </ul>
           </div>
           <div className={cx('timer')}>
-            <p className={cx('time')}>30</p>
+            <p className={cx('time')}>60</p>
           </div>
         </div>
-        <div className={cx('progress')}></div>
+        <ul className={cx('progress-list')}>
+          {PROGRESS_LADDER.map((step, index) => (
+            <li
+              className={cx([
+                'progress-item',
+                { 'progress-item--active': index === 0 },
+              ])}
+              key={step}
+            >
+              <span className={cx('progress-number')}>{index + 1}</span>
+              <span
+                className={cx([
+                  'progress-text',
+                  {
+                    'progress-text--highlighted':
+                      HIGHLIGHTED_STEPS.includes(index),
+                  },
+                ])}
+              >
+                {step}
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
       <section className={cx('question-answers')}>
         <dl className={cx('question-answers-list')}>

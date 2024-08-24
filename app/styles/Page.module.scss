@@ -5,17 +5,17 @@
 
   display: flex;
   justify-content: space-between;
-}
-
-.scoreboard {
-  min-width: 252px;
   min-height: 300px;
-  border-radius: $small-radius;
-  border: 2px solid $main-border-color;
 
   @include respond-to('tablet') {
     min-height: 543px;
   }
+}
+
+.scoreboard {
+  min-width: 252px;
+  border-radius: $small-radius;
+  border: 2px solid $main-border-color;
 }
 
 .scoreboard-title {
@@ -48,11 +48,9 @@
 }
 
 .game {
-  min-height: 300px;
-
-  @include respond-to('tablet') {
-    min-height: 543px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hint-list {
@@ -89,4 +87,60 @@
   font-size: 4.2rem;
   font-weight: 100;
   color: $secondary-font-color;
+}
+
+.progress-list {
+  @include reset-list;
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.progress-item {
+  position: relative;
+  display: flex;
+  gap: 28px;
+  height: 17px;
+  font-size: $large-font-size;
+}
+
+.progress-number {
+  display: flex;
+  justify-content: flex-end;
+  width: 24px;
+  color: $main-border-color;
+}
+
+.progress-text {
+  color: $accent-color;
+
+  &--highlighted {
+    color: white;
+  }
+}
+
+.progress-item--active {
+  & .progress-number {
+    color: white;
+  }
+
+  & .progress-text {
+    color: $main-border-color;
+  }
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    width: 216px;
+    height: 32px;
+    translate: -35px 0;
+    background-image: url('/progress_mark.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    z-index: -1;
+  }
 }
