@@ -53,8 +53,10 @@ export default function Home() {
               </li>
             </ul>
           </div>
-          <div className={cx('timer')}>
-            <p className={cx('time')}>60</p>
+          <div className={cx('timer-wrapper')}>
+            <div className={cx('timer')}>
+              <p className={cx('time')}>60</p>
+            </div>
           </div>
         </div>
         <ul className={cx('progress-list')}>
@@ -84,11 +86,19 @@ export default function Home() {
       </section>
       <section className={cx('question-answers')}>
         <dl className={cx('question-answers-list')}>
-          <dt className={cx('question')}>13</dt>
-          <dd className={cx('answer')}>123</dd>
-          <dd className={cx('answer')}>123</dd>
-          <dd className={cx('answer')}>123</dd>
-          <dd className={cx('answer')}>123</dd>
+          <dt className={cx('question')}>Question</dt>
+          <dd className={cx('answer1')}>
+            <button type="button">Answer 1</button>
+          </dd>
+          <dd className={cx('answer2')}>
+            <button type="button">Answer 2</button>
+          </dd>
+          <dd className={cx('answer3')}>
+            <button type="button">Answer 3</button>
+          </dd>
+          <dd className={cx('answer4')}>
+            <button type="button">Answer 4</button>
+          </dd>
         </dl>
       </section>
     </>
