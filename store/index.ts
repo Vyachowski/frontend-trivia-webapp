@@ -11,6 +11,7 @@ export const appSlice = createSlice({
       modalType: null as null | ModalTypes,
     },
     user: undefined as undefined | string,
+    progress: 0,
   },
   reducers: {
     setInitializedStatus: (state, _: PayloadAction<QuestionsData>) => {
@@ -23,6 +24,12 @@ export const appSlice = createSlice({
       state.interface.isModalOpened = false;
       state.interface.modalType = null;
       state.user = action.payload;
+    },
+    increaseProgressStep: (state) => {
+      state.progress += 1;
+    },
+    setFinishedStatus: (state) => {
+      state.status = AppFinalStates.FINISHED;
     },
   },
 });
