@@ -53,26 +53,6 @@
   justify-content: space-between;
 }
 
-.hint-list {
-  @include reset-list;
-  @include horizontal-list;
-
-  gap: 24px;
-}
-
-.hint-button {
-  @include reset-button;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 44px;
-  border-radius: 80px / 44px;
-  border: 2px solid $main-border-color;
-  background-color: $card-background-color;
-}
-
 .timer {
   display: flex;
   justify-content: center;

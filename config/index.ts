@@ -1,4 +1,4 @@
-export const ABOUT_LINK = '/about';
+export const ABOUT_LINK = '/';
 export const RULE_LINK = '/rules';
 export const FEEDBACK_LINK = '/feedback';
 
@@ -21,7 +21,7 @@ export const PROGRESS_LADDER = [
 ];
 
 export const HEADER_NAV = {
-  about: ABOUT_LINK,
+  game: ABOUT_LINK,
   rules: RULE_LINK,
   feedback: FEEDBACK_LINK,
 };

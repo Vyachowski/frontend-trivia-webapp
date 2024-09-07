@@ -12,7 +12,7 @@ export const Modal: React.FC = () => {
   const dispatch = useAppDispatch();
   const [username, setUsername] = useState<undefined | string>(undefined);
   const { isModalOpened, modalType } = useAppSelector(
-    (state) => state.app.interface
+    (state) => state.interface
   );
 
   const renderModalContent = (type: ModalTypes | null) => {

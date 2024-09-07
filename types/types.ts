@@ -10,12 +10,18 @@ export const enum Locales {
   He = 'he',
 }
 
-export enum AppFinalStates {
+export enum AppStates {
   STANDBY = 'STANDBY',
   INITIALIZED = 'INITIALIZED',
   RUNNING = 'RUNNING',
-  FINISHED = 'FINISHED',
   ERROR = 'ERROR',
+}
+
+export enum GameStates {
+  PAUSE = 'PAUSE',
+  ROUND = 'ROUND',
+  WIN = 'WIN',
+  LOST = 'LOST',
 }
 
 export interface QuestionRecord {

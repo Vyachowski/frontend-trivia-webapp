@@ -1,7 +1,11 @@
 import styles from './Page.module.scss';
 import classNames from 'classnames/bind';
-import { GoogleTipIcon, GptTipIcon, TestImage } from '@/assets';
+import { TestImage } from '@/assets';
 import { HIGHLIGHTED_STEPS, PROGRESS_LADDER } from '@/config';
+
+import { ClientProvider } from '@/components/client';
+import { HintList } from '@/components/client/containers/HintList/HintList';
+import { Modal } from '@/components/client/';
 const cx = classNames.bind(styles);
 
 export default function Home() {
@@ -21,37 +25,7 @@ export default function Home() {
         </div>
         <div className={cx('game')}>
           <div className={cx('hints-wrapper')}>
-            <ul className={cx('hint-list')}>
-              <li className={cx('hint')}>
-                <button
-                  className={cx('hint-button')}
-                  type="button"
-                  // onClick={() => console.log('Hint clicked!')}
-                >
-                  50:50
-                </button>
-              </li>
-              <li className={cx('hint')}>
-                <button
-                  className={cx('hint-button')}
-                  type="button"
-                  // onClick={() => console.log('Hint clicked!')}
-                >
-                  <span className="visually-hidden">Chat it!</span>
-                  <GptTipIcon />
-                </button>
-              </li>
-              <li className={cx('hint')}>
-                <button
-                  className={cx('hint-button')}
-                  type="button"
-                  // onClick={() => console.log('Hint clicked!')}
-                >
-                  <GoogleTipIcon />
-                  <span className="visually-hidden">Google it!</span>
-                </button>
-              </li>
-            </ul>
+            <HintList />
           </div>
           <div className={cx('timer-wrapper')}>
             <div className={cx('timer')}>
@@ -101,6 +75,9 @@ export default function Home() {
           </dd>
         </dl>
       </section>
+      <ClientProvider>
+        <Modal />
+      </ClientProvider>
     </>
   );
 }
