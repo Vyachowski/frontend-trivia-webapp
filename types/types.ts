@@ -29,3 +29,7 @@ export interface QuestionsData {
   options: string[][];
   answers: number[];
 }
+
+export enum ModalTypes {
+  USER_NAME = 'USER_NAME',
+}

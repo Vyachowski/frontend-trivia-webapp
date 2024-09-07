@@ -32,7 +32,7 @@ export default function RootLayout({
         <Header />
         <main style={{ paddingBlock: '42px' }}>{children}</main>
         <ClientProvider>
-          <Modal isOpen={false} type="nameForm" />
+          <Modal />
         </ClientProvider>
       </body>
     </html>

@@ -1,17 +1,23 @@
+'use client';
+
 import classNames from 'classnames/bind';
 
 import styles from './Modal.module.scss';
+import { setRunningStatus, useAppDispatch, useAppSelector } from '@/store';
+import { ModalTypes } from '@/types/types';
+import { useState } from 'react';
 const cx = classNames.bind(styles);
 
-type ModalTypes = 'nameForm';
+export const Modal: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const [username, setUsername] = useState<undefined | string>(undefined);
+  const { isModalOpened, modalType } = useAppSelector(
+    (state) => state.app.interface
+  );
 
-export const Modal: React.FC<{ type: ModalTypes; isOpen: boolean }> = ({
-  type,
-  isOpen,
-}) => {
-  const renderModalContent = (type: ModalTypes) => {
+  const renderModalContent = (type: ModalTypes | null) => {
     switch (type) {
-      case 'nameForm':
+      case ModalTypes.USER_NAME:
         return (
           <>
             <div className={cx('header')}>
@@ -19,11 +25,19 @@ export const Modal: React.FC<{ type: ModalTypes; isOpen: boolean }> = ({
             </div>
             <div className={cx('body')}>
               <label className={cx('label')}>
-                <input className={cx('input')} />
+                <input
+                  className={cx('input')}
+                  name="username"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
               </label>
             </div>
             <div className={cx('footer')}>
-              <button className={cx('submit-button')} type="button">
+              <button
+                className={cx('submit-button')}
+                type="button"
+                onClick={() => dispatch(setRunningStatus(username))}
+              >
                 Start game
               </button>
             </div>
@@ -35,10 +49,10 @@ export const Modal: React.FC<{ type: ModalTypes; isOpen: boolean }> = ({
   };
 
   return (
-    isOpen && (
+    isModalOpened && (
       <div className={cx(['modal', { isOpen: 'show' }])} tabIndex={-1}>
         <div className={cx('dialog')}>
-          <div className={cx('content')}>{renderModalContent(type)}</div>
+          <div className={cx('content')}>{renderModalContent(modalType)}</div>
         </div>
       </div>
     )
