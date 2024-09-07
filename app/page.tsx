@@ -1,31 +1,10 @@
 import styles from './Page.module.scss';
 import classNames from 'classnames/bind';
-import { getQuestionsAndAnswers } from '@/api';
 import { GoogleTipIcon, GptTipIcon, TestImage } from '@/assets';
 import { HIGHLIGHTED_STEPS, PROGRESS_LADDER } from '@/config';
 const cx = classNames.bind(styles);
 
 export default function Home() {
-  const data = getQuestionsAndAnswers();
-  const { questions, answers, rightAnswers } = data.reduce<{
-    questions: string[];
-    answers: string[][];
-    rightAnswers: number[];
-  }>(
-    (acc, dataset) => {
-      acc.questions.push(dataset.question);
-      acc.answers.push(dataset.answers);
-      acc.rightAnswers.push(dataset.rightAnswer);
-
-      return acc;
-    },
-    {
-      questions: [],
-      answers: [],
-      rightAnswers: [],
-    }
-  );
-
   return (
     <>
       <section className={cx('page-wrapper')}>

@@ -3,8 +3,11 @@ import { Roboto } from 'next/font/google';
 
 import '@/styles/globals.scss';
 
-import { Header } from '@/components';
-import { Modal } from '@/components';
+import { AppInitializer } from '@/components/client';
+import { Header } from '@/components/server/layouts';
+import { Modal } from '@/components/server/layouts';
+
+import normalizedData from '@/api';
 
 const roboto = Roboto({
   weight: ['100', '400', '500'],
@@ -25,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
+        <AppInitializer data={normalizedData} />
         <Header />
         <main style={{ paddingBlock: '42px' }}>{children}</main>
         <Modal isOpen={false} type="nameForm" />
