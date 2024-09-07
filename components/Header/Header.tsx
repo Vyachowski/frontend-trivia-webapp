@@ -3,16 +3,9 @@ import classNames from 'classnames/bind';
 
 import styles from './Header.module.scss';
 import { SpeakerIcon } from './SpeakerIcon/SpeakerIcon';
-import { en } from '@/app/dictionaries';
-import { ABOUT_LINK, RULE_LINK, FEEDBACK_LINK } from '@/app/constants';
+import { HEADER_NAV } from '@/config';
 
 const cx = classNames.bind(styles);
-
-const HEADER_NAV = {
-  [en.headerMenuItems.about]: ABOUT_LINK,
-  [en.headerMenuItems.rules]: RULE_LINK,
-  [en.headerMenuItems.feedback]: FEEDBACK_LINK,
-};
 
 export const Header = () => (
   <header className={cx('header')}>

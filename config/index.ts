@@ -20,5 +20,11 @@ export const PROGRESS_LADDER = [
   'King Of The Hill',
 ];
 
+export const HEADER_NAV = {
+  about: ABOUT_LINK,
+  rules: RULE_LINK,
+  feedback: FEEDBACK_LINK,
+};
+
 export const HIGHLIGHTED_STEPS = [4, 9, 14];
 export const env = process.env.NODE_ENV;

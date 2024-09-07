@@ -1,0 +1,112 @@
+[
+  {
+    "question": "What does HTML stand for?",
+    "answers": [
+      "HyperText Markup",
+      "Machine Language",
+      "Transfer Markup",
+      "Text Markdown"
+    ],
+    "rightAnswer": 0
+  },
+  {
+    "question": "Which element is the largest heading?",
+    "answers": ["<h1>", "<heading>", "<h6>", "<head>"],
+    "rightAnswer": 0
+  },
+  {
+    "question": "How to select an ID 'header' in CSS?",
+    "answers": ["#header", ".header", "header", "header#"],
+    "rightAnswer": 0
+  },
+  {
+    "question": "Which CSS property controls text size?",
+    "answers": ["font-style", "text-size", "font-size", "text-style"],
+    "rightAnswer": 2
+  },
+  {
+    "question": "What does CSS stand for?",
+    "answers": [
+      "Creative Sheets",
+      "Cascading Sheets",
+      "Computer Sheets",
+      "Colorful Sheets"
+    ],
+    "rightAnswer": 1
+  },
+  {
+    "question": "Which is a JavaScript data type?",
+    "answers": ["Number", "Boolean", "String", "All types"],
+    "rightAnswer": 3
+  },
+  {
+    "question": "What is true about closures?",
+    "answers": [
+      "Call function",
+      "Created each time",
+      "Define variables",
+      "Bind context"
+    ],
+    "rightAnswer": 1
+  },
+  {
+    "question": "Which method adds an element to an array?",
+    "answers": ["pop()", "push()", "shift()", "unshift()"],
+    "rightAnswer": 1
+  },
+  {
+    "question": "Correct syntax for creating a function?",
+    "answers": [
+      "function myFunction()",
+      "function = myFunction()",
+      "function:myFunction()",
+      "function => myFunction()"
+    ],
+    "rightAnswer": 0
+  },
+  {
+    "question": "What is true about React?",
+    "answers": [
+      "UI library",
+      "Full-stack framework",
+      "Database system",
+      "Server-side tech"
+    ],
+    "rightAnswer": 0
+  },
+  {
+    "question": "How to manage state in React?",
+    "answers": [
+      "State Manager",
+      "useState Hook",
+      "Component Manager",
+      "useEffect Hook"
+    ],
+    "rightAnswer": 1
+  },
+  {
+    "question": "Which hook is for side effects?",
+    "answers": ["useState", "useEffect", "useContext", "useReducer"],
+    "rightAnswer": 1
+  },
+  {
+    "question": "What is the Virtual DOM?",
+    "answers": ["Direct copy", "Lightweight copy", "Shadow DOM", "Real DOM"],
+    "rightAnswer": 1
+  },
+  {
+    "question": "Purpose of Redux?",
+    "answers": ["Manage state", "Handle API", "Component lifecycle", "Routing"],
+    "rightAnswer": 0
+  },
+  {
+    "question": "What is true about SSR in Next.js?",
+    "answers": [
+      "Pre-render pages",
+      "Client rendering",
+      "Static sites only",
+      "Not supported"
+    ],
+    "rightAnswer": 0
+  }
+]
