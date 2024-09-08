@@ -1,3 +1,4 @@
+import { PROGRESS_LADDER } from '@/config';
 import {
   AppStates,
   GameStates,
@@ -51,21 +52,27 @@ const gameSlice = createSlice({
     progress: 0,
   },
   reducers: {
+    startGame(state) {
+      state.gameState = GameStates.ROUND;
+    },
+    increaseProgressStep: (state) => {
+      if (state.progress === PROGRESS_LADDER.length - 1) {
+        state.gameState = GameStates.WIN;
+        return;
+      }
+
+      state.progress += 1;
+    },
     tick(state) {
-      if (state.timeLeft > 0) {
+      if (state.timeLeft > 1) {
         state.timeLeft -= 1;
       } else {
+        state.timeLeft = 0;
         state.gameState = GameStates.LOST;
       }
     },
     resetTime(state) {
       state.timeLeft = 60;
-    },
-    win(state) {
-      state.gameState = GameStates.WIN;
-    },
-    increaseProgressStep: (state) => {
-      state.progress += 1;
     },
   },
 });
@@ -113,7 +120,8 @@ export const answerSlice = createSlice({
 });
 
 export const { setInitializedStatus, setRunningStatus } = appSlice.actions;
-export const { tick, resetTime, win } = gameSlice.actions;
+export const { startGame, tick, resetTime, increaseProgressStep } =
+  gameSlice.actions;
 
 export const store = configureStore({
   reducer: {
