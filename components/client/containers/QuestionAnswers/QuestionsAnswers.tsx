@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import styles from './QuestionsAnswers.module.scss';
 import classNames from 'classnames/bind';
 import {
@@ -19,7 +18,6 @@ export const QuestionsAnswersComponent = () => {
   const options = useAppSelector((state) => state.options);
   const answers = useAppSelector((state) => state.answers);
   const currentRoundIndex = useAppSelector((state) => state.game.progress);
-  console.log(currentRoundIndex);
 
   const handleAnswerClick = (answerNumber: number) => {
     if (answerNumber === answers[currentRoundIndex]) {
