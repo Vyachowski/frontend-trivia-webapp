@@ -1,0 +1,81 @@
+@use '@/styles/variables.module.scss' as *;
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @include respond-to('mobile') {
+    padding-inline: 10px;
+  }
+}
+
+.wrapper {
+  @include horizontal-list;
+  @include container-narrow;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 4px solid $main-border-color;
+
+  @include respond-to('mobile') {
+    justify-content: space-between;
+  }
+}
+
+.menu {
+  @include horizontal-list;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item {
+  @include respond-to('mobile') {
+    &:first-child > * {
+      padding-left: 0;
+    }
+  }
+}
+
+.menu-link {
+  @include reset-link;
+  @include default-hover;
+
+  padding-block: 30px;
+  padding-inline: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+
+  @include respond-to('tablet') {
+    padding-inline: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+.settings-menu {
+  @include horizontal-list;
+
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.lang-switcher {
+  @include reset-button;
+  @include default-hover;
+
+  padding-block: 30px;
+}
+
+.sound-toggle {
+  @include reset-button;
+  @include default-hover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 30px;
+}

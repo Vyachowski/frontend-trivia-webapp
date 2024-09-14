@@ -1,0 +1,132 @@
+/* CONSTANTS */
+$accent-color: #e48800;
+$main-font-color: #b2bacd;
+$secondary-font-color: #9da6b7;
+$main-background-color: #1e2633;
+$secondary-background-color: #232a3a;
+$card-background-color: #2a3344;
+$modal-background-color: #0e1521cc;
+$main-border-color: #3a404e;
+$secondary-border-color: #384358;
+$modal-border-color: #2f394c;
+$main-scrollbar-color: #3b465c;
+$main-font-size: 16px;
+$large-font-size: 1.5rem;
+$heavy-background-shadow: 0 14px 34px 0 rgb(13 26 48 / 50%);
+$light-background-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+$modal-header-gradient: linear-gradient(0deg, #2a303e 0%, #161d2e 100%);
+$modal-active-button-radial-gradient: radial-gradient(
+  circle,
+  #2a3344 0%,
+  #2e3e59 100%
+);
+
+/* LAYERS */
+$basic-layer: 1;
+$menu-layer: 10;
+$modal-layer: 20;
+
+/* RADIUS */
+$small-radius: 10px;
+
+/* MEDIA-QUERY */
+@mixin respond-to($device) {
+  @if $device == 'mobile' {
+    @media (width >= 375px) {
+      @content;
+    }
+  } @else if $device == 'tablet' {
+    @media (width >= 768px) {
+      @content;
+    }
+  } @else if $device == 'desktop' {
+    @media (width >= 1024px) {
+      @content;
+    }
+  }
+}
+
+/* MIXINS */
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin horizontal-list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin container {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: 10px;
+
+  @include respond-to('tablet') {
+    padding-inline: 20px;
+  }
+}
+
+@mixin container-narrow {
+  @include container;
+
+  max-width: 1040px;
+}
+
+@mixin reset-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin reset-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin default-hover {
+  &:hover {
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in;
+  }
+
+  &:active {
+    opacity: 0.3;
+    transition: opacity 0.2s ease-in;
+  }
+}
+
+/* stylelint-disable */
+:export {
+  accentColor: $accent-color;
+  mainFontColor: $main-font-color;
+  mainBackgroundColor: $main-background-color;
+  secondaryFontColor: $secondary-background-color;
+  mainBorderColor: $main-border-color;
+  secondaryBorderColor: $secondary-border-color;
+  mainScrollbarColor: $main-scrollbar-color;
+  mainFontSize: $main-font-size;
+  largeFontSize: $large-font-size;
+  heavyBackgroundShadow: $heavy-background-shadow;
+  lightBackgroundShadow: $light-background-shadow;
+}
+/* stylelint-enable */

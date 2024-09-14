@@ -1,0 +1,61 @@
+@use '@/styles/variables.module.scss' as *;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: $modal-background-color;
+  backdrop-filter: blur(5px);
+  z-index: $modal-layer;
+}
+
+.dialog {
+  max-width: 370px;
+}
+
+.content {
+  border: 2px solid $modal-border-color;
+  border-radius: $small-radius;
+  overflow: hidden;
+  background-color: $main-background-color;
+}
+
+.header {
+  border-bottom: 2px solid $modal-border-color;
+  background: $modal-header-gradient;
+}
+
+.title {
+  padding: 16px 26px;
+  margin: 0;
+  text-align: center;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+.body {
+  border-bottom: 2px solid $modal-border-color;
+}
+
+.input {
+  @include reset-button;
+
+  width: 100%;
+  padding: 16px 26px;
+  cursor: initial;
+}
+
+.submit-button {
+  @include reset-button;
+
+  width: 100%;
+  padding: 16px 26px;
+  text-align: center;
+
+  &:hover {
+    background: $modal-active-button-radial-gradient;
+  }
+}

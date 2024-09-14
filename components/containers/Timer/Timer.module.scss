@@ -1,0 +1,17 @@
+@use '@/styles/variables.module.scss' as *;
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 288px;
+  height: 288px;
+  border-radius: 50%;
+  border: 6px solid $secondary-border-color;
+}
+
+.time {
+  font-size: 4.2rem;
+  font-weight: 100;
+  color: $secondary-font-color;
+}
