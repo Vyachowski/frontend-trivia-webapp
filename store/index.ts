@@ -8,6 +8,8 @@ import {
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
+const ROUND_TIME = 3;
+
 export const appSlice = createSlice({
   name: 'app',
   initialState: {
@@ -36,32 +38,48 @@ export const interfaceSlice = createSlice({
     builder.addCase(setInitializedStatus, (state) => {
       state.isModalOpened = true;
       state.modalType = ModalTypes.USER_NAME;
-    }),
-      builder.addCase(setRunningStatus, (state) => {
-        state.isModalOpened = false;
-        state.modalType = null;
-      });
+    });
+    builder.addCase(setRunningStatus, (state) => {
+      state.isModalOpened = false;
+      state.modalType = null;
+    });
+    builder.addCase(startGame, (state) => {
+      state.isModalOpened = false;
+      state.modalType = null;
+    });
+    builder.addCase(setWinStatus, (state) => {
+      state.isModalOpened = true;
+      state.modalType = ModalTypes.WIN;
+    });
+    builder.addCase(setLostStatus, (state) => {
+      state.isModalOpened = true;
+      state.modalType = ModalTypes.LOST;
+    });
   },
 });
 
 const gameSlice = createSlice({
   name: 'game',
   initialState: {
-    timeLeft: 60,
+    timeLeft: ROUND_TIME,
     gameState: GameStates.PAUSE,
     progress: 0,
   },
   reducers: {
     startGame(state) {
       state.gameState = GameStates.ROUND;
+      state.progress = 0;
+      state.timeLeft = ROUND_TIME;
+    },
+    setWinStatus(state) {
+      state.gameState = GameStates.WIN;
+    },
+    setLostStatus(state) {
+      state.gameState = GameStates.LOST;
     },
     increaseProgressStep: (state) => {
-      if (state.progress === PROGRESS_LADDER.length - 1) {
-        state.gameState = GameStates.WIN;
-        return;
-      }
-
       state.progress += 1;
+      state.timeLeft = ROUND_TIME;
     },
     tick(state) {
       if (state.timeLeft > 1) {
@@ -70,9 +88,6 @@ const gameSlice = createSlice({
         state.timeLeft = 0;
         state.gameState = GameStates.LOST;
       }
-    },
-    resetTime(state) {
-      state.timeLeft = 60;
     },
   },
 });
@@ -120,8 +135,13 @@ export const answerSlice = createSlice({
 });
 
 export const { setInitializedStatus, setRunningStatus } = appSlice.actions;
-export const { startGame, tick, resetTime, increaseProgressStep } =
-  gameSlice.actions;
+export const {
+  startGame,
+  setWinStatus,
+  setLostStatus,
+  increaseProgressStep,
+  tick,
+} = gameSlice.actions;
 
 export const store = configureStore({
   reducer: {

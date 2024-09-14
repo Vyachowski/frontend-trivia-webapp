@@ -38,4 +38,6 @@ export interface QuestionsData {
 
 export enum ModalTypes {
   USER_NAME = 'USER_NAME',
+  LOST = 'LOST',
+  WIN = 'WIN',
 }

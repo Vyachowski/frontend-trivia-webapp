@@ -1,7 +1,7 @@
 'use client';
 
 import {
-  resetTime,
+  setLostStatus,
   startGame,
   tick,
   useAppDispatch,
@@ -29,6 +29,12 @@ export const Timer = () => {
   }, [isAppRunning, dispatch]);
 
   useEffect(() => {
+    if (timeLeft === 0) {
+      dispatch(setLostStatus());
+    }
+  }, [timeLeft, dispatch]);
+
+  useEffect(() => {
     if (isGameRunning) {
       const intervalId = setInterval(() => {
         dispatch(tick());
@@ -36,7 +42,6 @@ export const Timer = () => {
 
       return () => {
         clearInterval(intervalId);
-        dispatch(resetTime());
       };
     }
   }, [dispatch, isGameRunning]);
