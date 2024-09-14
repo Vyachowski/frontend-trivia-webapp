@@ -2,6 +2,8 @@ export const ABOUT_LINK = '/';
 export const RULE_LINK = '/rules';
 export const FEEDBACK_LINK = '/feedback';
 
+export const ROUND_TIME = 60;
+
 export const PROGRESS_LADDER = [
   '500',
   '1 000',

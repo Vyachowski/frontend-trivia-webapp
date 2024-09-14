@@ -1,4 +1,4 @@
-import { PROGRESS_LADDER } from '@/config';
+import { ROUND_TIME } from '@/config';
 import {
   AppStates,
   GameStates,
@@ -7,8 +7,6 @@ import {
 } from '@/types/types';
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-
-const ROUND_TIME = 3;
 
 export const appSlice = createSlice({
   name: 'app',

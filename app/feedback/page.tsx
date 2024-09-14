@@ -4,6 +4,8 @@ const cx = classNames.bind(styles);
 
 export default function AboutPage() {
   return (
-    <div className={cx('page-wrapper')}>Here is an info about the app!</div>
+    <div className={cx('page-wrapper')}>
+      Send your feedback to vyachowski@yandex.ru
+    </div>
   );
 }
