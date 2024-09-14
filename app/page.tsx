@@ -2,10 +2,10 @@ import styles from './Page.module.scss';
 import classNames from 'classnames/bind';
 import { TestImage } from '@/assets';
 
-import { ClientProvider, ProgressList, Timer } from '@/components/client';
-import { HintList } from '@/components/client/containers/HintList/HintList';
-import { Modal } from '@/components/client/';
-import { QuestionsAnswers } from '@/components/client/containers/QuestionAnswers/QuestionsAnswers';
+import { ClientProvider, ProgressList, Timer } from '@/components';
+import { HintList } from '@/components';
+import { Modal } from '@/components';
+import { QuestionsAnswers } from '@/components';
 
 const cx = classNames.bind(styles);
 

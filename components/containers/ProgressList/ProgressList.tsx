@@ -3,12 +3,11 @@
 import styles from './ProgressList.module.scss';
 import classNames from 'classnames/bind';
 import { HIGHLIGHTED_STEPS, PROGRESS_LADDER } from '@/config';
-import { ClientProvider } from '../../store/ClientProvider';
 import { useAppSelector } from '@/store';
 
 const cx = classNames.bind(styles);
 
-export const ProgressListComponent = () => {
+export const ProgressList = () => {
   const currentRoundIndex = useAppSelector((state) => state.game.progress);
 
   return (
@@ -37,9 +36,3 @@ export const ProgressListComponent = () => {
     </ul>
   );
 };
-
-export const ProgressList = () => (
-  <ClientProvider>
-    <ProgressListComponent />
-  </ClientProvider>
-);

@@ -3,8 +3,8 @@ import { Roboto } from 'next/font/google';
 
 import '@/styles/globals.scss';
 
-import { AppInitializer } from '@/components/client';
-import { Header } from '@/components/server/';
+import { AppInitializer, ClientProvider } from '@/components';
+import { Header } from '@/components';
 
 import normalizedData from '@/api';
 
@@ -27,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <AppInitializer data={normalizedData} />
-        <Header />
-        <main style={{ paddingBlock: '42px' }}>{children}</main>
+        <ClientProvider>
+          <AppInitializer data={normalizedData} />
+          <Header />
+          <main style={{ paddingBlock: '42px' }}>{children}</main>
+        </ClientProvider>
       </body>
     </html>
   );

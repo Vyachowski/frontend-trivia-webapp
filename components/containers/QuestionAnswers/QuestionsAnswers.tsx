@@ -8,11 +8,10 @@ import {
   useAppDispatch,
   useAppSelector,
 } from '@/store';
-import { ClientProvider } from '../../store/ClientProvider';
 
 const cx = classNames.bind(styles);
 
-export const QuestionsAnswersComponent = () => {
+export const QuestionsAnswers = () => {
   const dispatch = useAppDispatch();
   const questions = useAppSelector((state) => state.questions);
   const options = useAppSelector((state) => state.options);
@@ -68,9 +67,3 @@ export const QuestionsAnswersComponent = () => {
     </dl>
   );
 };
-
-export const QuestionsAnswers = () => (
-  <ClientProvider>
-    <QuestionsAnswersComponent />
-  </ClientProvider>
-);

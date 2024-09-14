@@ -11,11 +11,10 @@ import styles from './Timer.module.scss';
 import classNames from 'classnames/bind';
 import { AppStates, GameStates } from '@/types/types';
 import { useEffect } from 'react';
-import { ClientProvider } from '../../store/ClientProvider';
 
 const cx = classNames.bind(styles);
 
-const TimerComponent = () => {
+export const Timer = () => {
   const dispatch = useAppDispatch();
   const isAppRunning =
     useAppSelector((state) => state.app.status) === AppStates.RUNNING;
@@ -48,9 +47,3 @@ const TimerComponent = () => {
     </div>
   );
 };
-
-export const Timer = () => (
-  <ClientProvider>
-    <TimerComponent />
-  </ClientProvider>
-);
