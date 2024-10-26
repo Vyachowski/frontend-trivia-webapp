@@ -7,7 +7,11 @@ import { HintList } from '@/components';
 import { Modal } from '@/components';
 import { QuestionsAnswers } from '@/components';
 
+import normalizedData from '@/api';
+
 const cx = classNames.bind(styles);
+
+const { questions, options, answers } = normalizedData;
 
 export default function Home() {
   return (
@@ -35,7 +39,7 @@ export default function Home() {
         <ProgressList />
       </section>
       <section className={cx('question-answers')}>
-        <QuestionsAnswers />
+        <QuestionsAnswers data={normalizedData} />
       </section>
       <ClientProvider>
         <Modal />

@@ -8,7 +8,7 @@ import { useAppSelector } from '@/store';
 const cx = classNames.bind(styles);
 
 export const ProgressList = () => {
-  const currentRoundIndex = useAppSelector((state) => state.game.progress);
+  const currentRoundIndex = useAppSelector((state) => state.round.count);
 
   return (
     <ul className={cx('progress-list')}>

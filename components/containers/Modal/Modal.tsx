@@ -3,12 +3,7 @@
 import classNames from 'classnames/bind';
 
 import styles from './Modal.module.scss';
-import {
-  setRunningStatus,
-  startGame,
-  useAppDispatch,
-  useAppSelector,
-} from '@/store';
+import { useAppDispatch, useAppSelector } from '@/store';
 import { ModalTypes } from '@/types/types';
 import { useState } from 'react';
 import { PROGRESS_LADDER } from '@/config';
@@ -17,14 +12,12 @@ const cx = classNames.bind(styles);
 export const Modal: React.FC = () => {
   const dispatch = useAppDispatch();
   const [username, setUsername] = useState<undefined | string>(undefined);
-  const { isModalOpened, modalType } = useAppSelector(
-    (state) => state.interface
-  );
-  const score = useAppSelector((state) => state.game.progress);
+  const { visible, type } = useAppSelector((state) => state.modal);
+  const score = useAppSelector((state) => state.player.score);
 
   const renderModalContent = (type: ModalTypes | null) => {
     switch (type) {
-      case ModalTypes.USER_NAME:
+      case ModalTypes.userName:
         return (
           <>
             <div className={cx('header')}>
@@ -44,14 +37,14 @@ export const Modal: React.FC = () => {
               <button
                 className={cx('submit-button')}
                 type="button"
-                onClick={() => dispatch(setRunningStatus(username))}
+                onClick={() => console.log('Uiiiii')}
               >
                 Start game
               </button>
             </div>
           </>
         );
-      case ModalTypes.LOST:
+      case ModalTypes.lost:
         return (
           <>
             <div className={cx('header')}>
@@ -66,14 +59,14 @@ export const Modal: React.FC = () => {
               <button
                 className={cx('submit-button')}
                 type="button"
-                onClick={() => dispatch(startGame())}
+                // onClick={() => dispatch(startGame())}
               >
                 Try again
               </button>
             </div>
           </>
         );
-      case ModalTypes.WIN:
+      case ModalTypes.win:
         return (
           <>
             <div className={cx('header')}>
@@ -86,7 +79,7 @@ export const Modal: React.FC = () => {
               <button
                 className={cx('submit-button')}
                 type="button"
-                onClick={() => dispatch(setRunningStatus(username))}
+                // onClick={() => dispatch(setRunningStatus(username))}
               >
                 Try again
               </button>
@@ -99,10 +92,10 @@ export const Modal: React.FC = () => {
   };
 
   return (
-    isModalOpened && (
+    visible && (
       <div className={cx(['modal', { isOpen: 'show' }])} tabIndex={-1}>
         <div className={cx('dialog')}>
-          <div className={cx('content')}>{renderModalContent(modalType)}</div>
+          <div className={cx('content')}>{renderModalContent(type)}</div>
         </div>
       </div>
     )
