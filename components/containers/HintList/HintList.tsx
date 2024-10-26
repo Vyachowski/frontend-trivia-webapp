@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 export const HintList = () => {
   const isRoundGoing =
-    useAppSelector((state) => state.game.gameState) === GameStates.ROUND;
+    useAppSelector((state) => state.game.state) === GameStates.Start;
 
   return (
     <ul className={cx('hint-list')}>
