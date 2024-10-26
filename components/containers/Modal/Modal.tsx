@@ -15,15 +15,20 @@ import { PROGRESS_LADDER } from '@/config';
 const cx = classNames.bind(styles);
 
 export const Modal: React.FC = () => {
-  const nameElementRef = useRef(null);
+  const nameElementRef = useRef<HTMLInputElement | null>(null);
   const dispatch = useAppDispatch();
 
   const { visible, type } = useAppSelector((state) => state.modal);
   const { score } = useAppSelector((state) => state.player);
 
   const handleNameSubmit = () => {
-    dispatch(setPlayerName(nameElementRef?.current?.value));
-    dispatch(closeModal());
+    const newName = nameElementRef?.current?.value;
+    const isValidName = newName && newName.length > 0;
+
+    if (isValidName) {
+      dispatch(setPlayerName(newName));
+      dispatch(closeModal());
+    }
   };
 
   const renderModalContent = (type: ModalTypes | null) => {
