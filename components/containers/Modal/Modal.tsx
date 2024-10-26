@@ -3,17 +3,28 @@
 import classNames from 'classnames/bind';
 
 import styles from './Modal.module.scss';
-import { useAppDispatch, useAppSelector } from '@/store';
+import {
+  closeModal,
+  setPlayerName,
+  useAppDispatch,
+  useAppSelector,
+} from '@/store';
 import { ModalTypes } from '@/types/types';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { PROGRESS_LADDER } from '@/config';
 const cx = classNames.bind(styles);
 
 export const Modal: React.FC = () => {
+  const nameElementRef = useRef(null);
   const dispatch = useAppDispatch();
-  const [username, setUsername] = useState<undefined | string>(undefined);
+
   const { visible, type } = useAppSelector((state) => state.modal);
-  const score = useAppSelector((state) => state.player.score);
+  const { score } = useAppSelector((state) => state.player);
+
+  const handleNameSubmit = () => {
+    dispatch(setPlayerName(nameElementRef?.current?.value));
+    dispatch(closeModal());
+  };
 
   const renderModalContent = (type: ModalTypes | null) => {
     switch (type) {
@@ -28,8 +39,8 @@ export const Modal: React.FC = () => {
                 <input
                   className={cx('input')}
                   name="username"
-                  onChange={(e) => setUsername(e.target.value)}
                   data-1p-ignore
+                  ref={nameElementRef}
                 />
               </label>
             </div>
@@ -37,7 +48,7 @@ export const Modal: React.FC = () => {
               <button
                 className={cx('submit-button')}
                 type="button"
-                onClick={() => console.log('Uiiiii')}
+                onClick={handleNameSubmit}
               >
                 Start game
               </button>

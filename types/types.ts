@@ -18,7 +18,7 @@ export enum AppStates {
 }
 
 export enum GameStates {
-  Running = 'RUNNING',
+  Start = 'START',
   Win = 'WIN',
   Lost = 'LOST',
 }

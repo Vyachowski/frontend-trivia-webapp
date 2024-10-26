@@ -4,6 +4,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { ROUND_TIME } from '@/config';
 import { GameStates, ModalTypes } from '@/types/types';
 
+// SECTION: SLICES
 export const playerSlice = createSlice({
   name: 'player',
   initialState: {
@@ -27,7 +28,7 @@ export const modalSlice = createSlice({
   name: 'modal',
   initialState: {
     visible: false,
-    type: ModalTypes.userName,
+    type: null as ModalTypes | null,
   },
   reducers: {
     openUserModal(state) {
@@ -36,6 +37,7 @@ export const modalSlice = createSlice({
     },
     closeModal(state) {
       state.visible = false;
+      state.type = null;
     },
   },
 });
@@ -62,7 +64,7 @@ const roundSlice = createSlice({
 const gameSlice = createSlice({
   name: 'game',
   initialState: {
-    state: GameStates.Running,
+    state: GameStates.Start,
   },
   reducers: {
     setWinStatus(state) {
@@ -72,19 +74,16 @@ const gameSlice = createSlice({
       state.state = GameStates.Lost;
     },
   },
-  extraReducers: (builder) => {
-    builder.addCase(roundSlice.actions.tick, (state, action) => {
-      console.log(state, action);
-    });
-  },
 });
 
+// SECTION: ACTIONS
 export const { setWinStatus, setLostStatus } = gameSlice.actions;
 export const { setPlayerName, setPlayerScore, resetPlayerScore } =
   playerSlice.actions;
 export const { increaseRoundCount, tick, resetTimer } = roundSlice.actions;
 export const { openUserModal, closeModal } = modalSlice.actions;
 
+// SECTION: REDUCERS
 export const store = configureStore({
   reducer: {
     game: gameSlice.reducer,
@@ -94,6 +93,7 @@ export const store = configureStore({
   },
 });
 
+// SECTION: EXPORT
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
