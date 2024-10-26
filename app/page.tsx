@@ -2,12 +2,16 @@ import styles from './Page.module.scss';
 import classNames from 'classnames/bind';
 import { TestImage } from '@/assets';
 
-import { ClientProvider, ProgressList, Timer } from '@/components';
+import { ProgressList, Timer } from '@/components';
 import { HintList } from '@/components';
 import { Modal } from '@/components';
 import { QuestionsAnswers } from '@/components';
 
+import normalizedData from '@/api';
+
 const cx = classNames.bind(styles);
+
+const { questions, options, answers } = normalizedData;
 
 export default function Home() {
   return (
@@ -35,11 +39,9 @@ export default function Home() {
         <ProgressList />
       </section>
       <section className={cx('question-answers')}>
-        <QuestionsAnswers />
+        <QuestionsAnswers data={normalizedData} />
       </section>
-      <ClientProvider>
-        <Modal />
-      </ClientProvider>
+      <Modal />
     </>
   );
 }

@@ -3,7 +3,7 @@
 import styles from './QuestionsAnswers.module.scss';
 import classNames from 'classnames/bind';
 import {
-  increaseProgressStep,
+  increaseRoundCount,
   setLostStatus,
   setWinStatus,
   useAppDispatch,
@@ -14,14 +14,14 @@ import { PROGRESS_LADDER } from '@/config';
 
 const cx = classNames.bind(styles);
 
-export const QuestionsAnswers = () => {
+export const QuestionsAnswers = ({ data }: any) => {
   const dispatch = useAppDispatch();
-  const questions = useAppSelector((state) => state.questions);
-  const options = useAppSelector((state) => state.options);
-  const answers = useAppSelector((state) => state.answers);
-  const currentRoundIndex = useAppSelector((state) => state.game.progress);
+
+  const { questions, options, answers } = data;
+
+  const currentRoundIndex = useAppSelector((state) => state.round.count);
   const isRoundGoing =
-    useAppSelector((state) => state.game.gameState) === GameStates.ROUND;
+    useAppSelector((state) => state.game.state) === GameStates.Start;
 
   const handleAnswerClick = (answerNumber: number) => {
     const isAnswerRight = answerNumber === answers[currentRoundIndex];
@@ -30,7 +30,7 @@ export const QuestionsAnswers = () => {
     if (isAnswerRight && lastRound) {
       dispatch(setWinStatus());
     } else if (isAnswerRight) {
-      dispatch(increaseProgressStep());
+      dispatch(increaseRoundCount());
     } else {
       dispatch(setLostStatus());
     }

@@ -11,17 +11,16 @@ export const enum Locales {
 }
 
 export enum AppStates {
-  STANDBY = 'STANDBY',
-  INITIALIZED = 'INITIALIZED',
-  RUNNING = 'RUNNING',
-  ERROR = 'ERROR',
+  Standby = 'STANDBY',
+  Initialized = 'INITIALIZED',
+  Running = 'RUNNING',
+  Error = 'ERROR',
 }
 
 export enum GameStates {
-  PAUSE = 'PAUSE',
-  ROUND = 'ROUND',
-  WIN = 'WIN',
-  LOST = 'LOST',
+  Start = 'START',
+  Win = 'WIN',
+  Lost = 'LOST',
 }
 
 export interface QuestionRecord {
@@ -37,7 +36,7 @@ export interface QuestionsData {
 }
 
 export enum ModalTypes {
-  USER_NAME = 'USER_NAME',
-  LOST = 'LOST',
-  WIN = 'WIN',
+  userName = 'USER_NAME',
+  lost = 'LOST',
+  win = 'WIN',
 }

@@ -1,157 +1,99 @@
-import { ROUND_TIME } from '@/config';
-import {
-  AppStates,
-  GameStates,
-  ModalTypes,
-  QuestionsData,
-} from '@/types/types';
 import { configureStore, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
-export const appSlice = createSlice({
-  name: 'app',
+import { ROUND_TIME } from '@/config';
+import { GameStates, ModalTypes } from '@/types/types';
+
+// SECTION: SLICES
+export const playerSlice = createSlice({
+  name: 'player',
   initialState: {
-    status: AppStates.STANDBY as AppStates,
-    user: undefined as undefined | string,
+    name: undefined as string | undefined,
+    score: 0,
   },
   reducers: {
-    setInitializedStatus: (state, _: PayloadAction<QuestionsData>) => {
-      state.status = AppStates.INITIALIZED;
+    setPlayerName(state, action: PayloadAction<string>) {
+      state.name = action.payload;
     },
-    setRunningStatus: (state, action) => {
-      state.status = AppStates.RUNNING;
-      state.user = action.payload;
+    setPlayerScore(state, action: PayloadAction<number>) {
+      state.score = action.payload;
+    },
+    resetPlayerScore(state) {
+      state.score = 0;
     },
   },
 });
 
-export const interfaceSlice = createSlice({
-  name: 'interface',
+export const modalSlice = createSlice({
+  name: 'modal',
   initialState: {
-    isModalOpened: false as boolean,
-    modalType: null as null | ModalTypes,
+    visible: false,
+    type: null as ModalTypes | null,
   },
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(setInitializedStatus, (state) => {
-      state.isModalOpened = true;
-      state.modalType = ModalTypes.USER_NAME;
-    });
-    builder.addCase(setRunningStatus, (state) => {
-      state.isModalOpened = false;
-      state.modalType = null;
-    });
-    builder.addCase(startGame, (state) => {
-      state.isModalOpened = false;
-      state.modalType = null;
-    });
-    builder.addCase(setWinStatus, (state) => {
-      state.isModalOpened = true;
-      state.modalType = ModalTypes.WIN;
-    });
-    builder.addCase(setLostStatus, (state) => {
-      state.isModalOpened = true;
-      state.modalType = ModalTypes.LOST;
-    });
+  reducers: {
+    openUserModal(state) {
+      state.type = ModalTypes.userName;
+      state.visible = true;
+    },
+    closeModal(state) {
+      state.visible = false;
+      state.type = null;
+    },
+  },
+});
+
+const roundSlice = createSlice({
+  name: 'round',
+  initialState: {
+    count: 0,
+    timeLeft: ROUND_TIME,
+  },
+  reducers: {
+    tick(state) {
+      state.timeLeft -= 1;
+    },
+    resetTimer(state) {
+      state.timeLeft = ROUND_TIME;
+    },
+    increaseRoundCount(state) {
+      state.count += 1;
+    },
   },
 });
 
 const gameSlice = createSlice({
   name: 'game',
   initialState: {
-    timeLeft: ROUND_TIME,
-    gameState: GameStates.PAUSE,
-    progress: 0,
+    state: GameStates.Start,
   },
   reducers: {
-    startGame(state) {
-      state.gameState = GameStates.ROUND;
-      state.progress = 0;
-      state.timeLeft = ROUND_TIME;
-    },
     setWinStatus(state) {
-      state.gameState = GameStates.WIN;
+      state.state = GameStates.Win;
     },
     setLostStatus(state) {
-      state.gameState = GameStates.LOST;
-    },
-    increaseProgressStep: (state) => {
-      state.progress += 1;
-      state.timeLeft = ROUND_TIME;
-    },
-    tick(state) {
-      if (state.timeLeft > 1) {
-        state.timeLeft -= 1;
-      } else {
-        state.timeLeft = 0;
-        state.gameState = GameStates.LOST;
-      }
+      state.state = GameStates.Lost;
     },
   },
 });
 
-export const questionsSlice = createSlice({
-  name: 'questions',
-  initialState: [] as string[],
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(
-      setInitializedStatus,
-      (_, action: PayloadAction<QuestionsData>) => {
-        return [...(action?.payload?.questions || [])];
-      }
-    );
-  },
-});
+// SECTION: ACTIONS
+export const { setWinStatus, setLostStatus } = gameSlice.actions;
+export const { setPlayerName, setPlayerScore, resetPlayerScore } =
+  playerSlice.actions;
+export const { increaseRoundCount, tick, resetTimer } = roundSlice.actions;
+export const { openUserModal, closeModal } = modalSlice.actions;
 
-export const optionsSlice = createSlice({
-  name: 'options',
-  initialState: [] as string[][],
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(
-      setInitializedStatus,
-      (_, action: PayloadAction<QuestionsData>) => {
-        return [...(action?.payload?.options || [])];
-      }
-    );
-  },
-});
-
-export const answerSlice = createSlice({
-  name: 'answers',
-  initialState: [] as number[],
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(
-      setInitializedStatus,
-      (_, action: PayloadAction<QuestionsData>) => {
-        return [...(action?.payload?.answers || [])];
-      }
-    );
-  },
-});
-
-export const { setInitializedStatus, setRunningStatus } = appSlice.actions;
-export const {
-  startGame,
-  setWinStatus,
-  setLostStatus,
-  increaseProgressStep,
-  tick,
-} = gameSlice.actions;
-
+// SECTION: REDUCERS
 export const store = configureStore({
   reducer: {
-    app: appSlice.reducer,
     game: gameSlice.reducer,
-    interface: interfaceSlice.reducer,
-    questions: questionsSlice.reducer,
-    options: optionsSlice.reducer,
-    answers: answerSlice.reducer,
+    player: playerSlice.reducer,
+    round: roundSlice.reducer,
+    modal: modalSlice.reducer,
   },
 });
 
+// SECTION: EXPORT
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
