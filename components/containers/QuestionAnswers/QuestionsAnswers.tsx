@@ -21,7 +21,7 @@ export const QuestionsAnswers = ({ data }: any) => {
 
   const currentRoundIndex = useAppSelector((state) => state.round.count);
   const isRoundGoing =
-    useAppSelector((state) => state.game.state) === GameStates.Running;
+    useAppSelector((state) => state.game.state) === GameStates.Start;
 
   const handleAnswerClick = (answerNumber: number) => {
     const isAnswerRight = answerNumber === answers[currentRoundIndex];
