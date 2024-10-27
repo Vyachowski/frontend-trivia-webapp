@@ -3,11 +3,12 @@
 import styles from './QuestionsAnswers.module.scss';
 import classNames from 'classnames/bind';
 import {
-  increaseRoundCount,
+  startNewRound,
   setLostStatus,
   setWinStatus,
   useAppDispatch,
   useAppSelector,
+  setPlayerScore,
 } from '@/store';
 import { GameStates } from '@/types/types';
 import { PROGRESS_LADDER } from '@/config';
@@ -26,11 +27,13 @@ export const QuestionsAnswers = ({ data }: any) => {
   const handleAnswerClick = (answerNumber: number) => {
     const isAnswerRight = answerNumber === answers[currentRoundIndex];
     const lastRound = currentRoundIndex === PROGRESS_LADDER.length;
+    const scoreForRightAnswer = PROGRESS_LADDER[currentRoundIndex];
 
     if (isAnswerRight && lastRound) {
       dispatch(setWinStatus());
     } else if (isAnswerRight) {
-      dispatch(increaseRoundCount());
+      dispatch(startNewRound());
+      dispatch(setPlayerScore(scoreForRightAnswer));
     } else {
       dispatch(setLostStatus());
     }
