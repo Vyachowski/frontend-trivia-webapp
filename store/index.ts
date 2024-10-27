@@ -19,7 +19,7 @@ export const playerSlice = createSlice({
       state.score = action.payload;
     },
     resetPlayerScore(state) {
-      state.score = 0;
+      state.score = '0';
     },
   },
 });
