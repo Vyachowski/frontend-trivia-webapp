@@ -5,3 +5,4 @@ export { HintList } from './containers/HintList/HintList';
 export { Modal } from './containers/Modal/Modal';
 export { Timer } from './containers/Timer/Timer';
 export { Header } from './layouts/Header/Header';
+export { App } from './containers/App/App';

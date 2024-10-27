@@ -5,7 +5,10 @@ import classNames from 'classnames/bind';
 import styles from './Modal.module.scss';
 import {
   closeModal,
+  resetPlayerScore,
+  resetProgress,
   setPlayerName,
+  setStartStatus,
   useAppDispatch,
   useAppSelector,
 } from '@/store';
@@ -29,6 +32,13 @@ export const Modal: React.FC = () => {
       dispatch(setPlayerName(newName));
       dispatch(closeModal());
     }
+  };
+
+  const handleResetButton = () => {
+    dispatch(setStartStatus());
+    dispatch(closeModal());
+    dispatch(resetProgress());
+    dispatch(resetPlayerScore());
   };
 
   const renderModalContent = (type: ModalTypes | null) => {
@@ -68,14 +78,14 @@ export const Modal: React.FC = () => {
             </div>
             <div className={cx('body')}>
               <p style={{ textAlign: 'center' }}>
-                Your final score is: {PROGRESS_LADDER[score]}
+                Your final score is: {score}
               </p>
             </div>
             <div className={cx('footer')}>
               <button
                 className={cx('submit-button')}
                 type="button"
-                // onClick={() => dispatch(startGame())}
+                onClick={handleResetButton}
               >
                 Try again
               </button>
@@ -86,16 +96,16 @@ export const Modal: React.FC = () => {
         return (
           <>
             <div className={cx('header')}>
-              <h2 className={cx(['title'])}>Not this time, Champ :(</h2>
+              <h2 className={cx(['title'])}>Victory, congratulations!</h2>
             </div>
             <div className={cx('body')}>
-              <p>Your final score is: {PROGRESS_LADDER[score]}</p>
+              <p>Your final score is: {score}</p>
             </div>
             <div className={cx('footer')}>
               <button
                 className={cx('submit-button')}
                 type="button"
-                // onClick={() => dispatch(setRunningStatus(username))}
+                onClick={handleResetButton}
               >
                 Try again
               </button>

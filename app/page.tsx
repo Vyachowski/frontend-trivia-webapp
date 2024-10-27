@@ -2,10 +2,14 @@ import styles from './Page.module.scss';
 import classNames from 'classnames/bind';
 import { TestImage } from '@/assets';
 
-import { ProgressList, Timer } from '@/components';
-import { HintList } from '@/components';
-import { Modal } from '@/components';
-import { QuestionsAnswers } from '@/components';
+import {
+  ProgressList,
+  Timer,
+  HintList,
+  Modal,
+  QuestionsAnswers,
+  App,
+} from '@/components';
 
 import normalizedData from '@/api';
 
@@ -15,7 +19,7 @@ const { questions, options, answers } = normalizedData;
 
 export default function Home() {
   return (
-    <>
+    <App>
       <section className={cx('page-wrapper')}>
         <div className={cx('scoreboard')}>
           <h2 className={cx('scoreboard-title')}>Scoreboard</h2>
@@ -42,6 +46,6 @@ export default function Home() {
         <QuestionsAnswers data={normalizedData} />
       </section>
       <Modal />
-    </>
+    </App>
   );
 }

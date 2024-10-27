@@ -10,23 +10,10 @@ const cx = classNames.bind(styles);
 
 export const Timer = () => {
   const dispatch = useAppDispatch();
-  const isAppRunning =
-    useAppSelector((state) => state.game.state) === GameStates.Start;
+
   const isGameRunning =
     useAppSelector((state) => state.game.state) === GameStates.Start;
   const timeLeft = useAppSelector((state) => state.round.timeLeft);
-
-  // useEffect(() => {
-  //   if (isAppRunning) {
-  //     dispatch(startGame());
-  //   }
-  // }, [isAppRunning, dispatch]);
-
-  useEffect(() => {
-    if (timeLeft === 0) {
-      dispatch(setLostStatus());
-    }
-  }, [timeLeft, dispatch]);
 
   useEffect(() => {
     if (isGameRunning) {

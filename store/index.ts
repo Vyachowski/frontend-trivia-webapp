@@ -9,17 +9,17 @@ export const playerSlice = createSlice({
   name: 'player',
   initialState: {
     name: undefined as string | undefined,
-    score: 0,
+    score: '0',
   },
   reducers: {
     setPlayerName(state, action: PayloadAction<string>) {
       state.name = action.payload;
     },
-    setPlayerScore(state, action: PayloadAction<number>) {
+    setPlayerScore(state, action: PayloadAction<string>) {
       state.score = action.payload;
     },
     resetPlayerScore(state) {
-      state.score = 0;
+      state.score = '0';
     },
   },
 });
@@ -33,6 +33,14 @@ export const modalSlice = createSlice({
   reducers: {
     openUserModal(state) {
       state.type = ModalTypes.userName;
+      state.visible = true;
+    },
+    openLostModal(state) {
+      state.type = ModalTypes.lost;
+      state.visible = true;
+    },
+    openWinModal(state) {
+      state.type = ModalTypes.lost;
       state.visible = true;
     },
     closeModal(state) {
@@ -52,11 +60,13 @@ const roundSlice = createSlice({
     tick(state) {
       state.timeLeft -= 1;
     },
-    resetTimer(state) {
+    startNewRound(state) {
+      state.count += 1;
       state.timeLeft = ROUND_TIME;
     },
-    increaseRoundCount(state) {
-      state.count += 1;
+    resetProgress(state) {
+      state.count = 0;
+      state.timeLeft = ROUND_TIME;
     },
   },
 });
@@ -64,9 +74,12 @@ const roundSlice = createSlice({
 const gameSlice = createSlice({
   name: 'game',
   initialState: {
-    state: GameStates.Start,
+    state: null as null | GameStates,
   },
   reducers: {
+    setStartStatus(state) {
+      state.state = GameStates.Start;
+    },
     setWinStatus(state) {
       state.state = GameStates.Win;
     },
@@ -77,11 +90,13 @@ const gameSlice = createSlice({
 });
 
 // SECTION: ACTIONS
-export const { setWinStatus, setLostStatus } = gameSlice.actions;
+export const { setStartStatus, setWinStatus, setLostStatus } =
+  gameSlice.actions;
 export const { setPlayerName, setPlayerScore, resetPlayerScore } =
   playerSlice.actions;
-export const { increaseRoundCount, tick, resetTimer } = roundSlice.actions;
-export const { openUserModal, closeModal } = modalSlice.actions;
+export const { startNewRound, tick, resetProgress } = roundSlice.actions;
+export const { openUserModal, openWinModal, openLostModal, closeModal } =
+  modalSlice.actions;
 
 // SECTION: REDUCERS
 export const store = configureStore({
